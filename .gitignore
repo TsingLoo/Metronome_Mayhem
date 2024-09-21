@@ -107,6 +107,7 @@ crashlytics-build.properties
 # macOS
 .DS_Store
 # Jetbrain
+/.idea
 .idea
 # Git
 .git
