@@ -69,13 +69,13 @@ public class InputScript : MonoBehaviour
     }
 
     private void pressed(int lane, bool hold) {
-        if (cooldownTimer[lane] > 0.001f || (hold && holdNoteTimer[lane] > 0.001f)) return;
+        if (cooldownTimer[lane] > 0.001f) return;
         if (!hold) {
             //activate laser
         }
         
         Collider[] hitColliders = Physics.OverlapSphere(laneEndPos[lane].position, 0.8f);
-        if (hitColliders.Length <= 0) {
+        if (hitColliders.Length <= 0 && !(hold && holdNoteTimer[lane] > 0.001f)) {
             GameManager.Instance.noNote();
             return;
         }
