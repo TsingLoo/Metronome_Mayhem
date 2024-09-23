@@ -21,10 +21,11 @@ def convert_json_to_tuples(json_file):
 def main():
     # Song select for conversion
     songs_path = Path(f"./Data/beatmaps").resolve()
-    mapped_songs = '\n'.join(os.listdir(songs_path))
+    mapped_songs = list(song for song in os.listdir(songs_path) if '.' not in song)
+    mapped_songs_str = '\n'.join(mapped_songs)
     song_name = ' '
     while song_name not in mapped_songs:
-        song_name = input(f"Select song name from the following:\n{mapped_songs}\n")
+        song_name = input(f"Select song name from the following:\n{mapped_songs_str}\n")
 
     # Set path
     json_path = Path(f"./Data/beatmaps/{song_name}/{song_name}.json").resolve()

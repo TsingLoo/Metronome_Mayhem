@@ -8,10 +8,10 @@ def osu_to_json(osu_file, bpm: int):
         return (offset / 1000) * (bpm / 60)
 
     x_to_key = {
-        64: "D",   # Osu!mania x-position 64 → D key
-        192: "F",  # Osu!mania x-position 192 → F key
-        320: "J",  # Osu!mania x-position 320 → J key
-        448: "K"   # Osu!mania x-position 448 → K key
+        64: "Z",   # Osu!mania x-position 64 → D key
+        192: "X",  # Osu!mania x-position 192 → F key
+        320: "N",  # Osu!mania x-position 320 → J key
+        448: "M"   # Osu!mania x-position 448 → K key
     }
     beatmap_data = []
 
@@ -56,10 +56,11 @@ def osu_to_json(osu_file, bpm: int):
 def main():
     # Song select for conversion
     songs_path = Path(f"./Data/beatmaps").resolve()
-    mapped_songs = '\n'.join(os.listdir(songs_path))
+    mapped_songs = list(song for song in os.listdir(songs_path) if '.' not in song)
+    mapped_songs_str = '\n'.join(mapped_songs)
     song_name = ' '
     while song_name not in mapped_songs:
-        song_name = input(f"Select song name from the following:\n{mapped_songs}\n")
+        song_name = input(f"Select song name from the following:\n{mapped_songs_str}\n")
 
     # Run conversion
     osu_file_path = Path(f"./Data/beatmaps/{song_name}/{song_name}.osu").resolve()
