@@ -37,7 +37,7 @@ def main():
     # Save result to a new text file
     with open(tuple_path, mode='w') as tuple_file:
         for note in tuple_beatmap:
-            tuple_file.write(f"{note} ")
+            tuple_file.write(f"{note}, ")
 
     print("Conversion complete!")
 
