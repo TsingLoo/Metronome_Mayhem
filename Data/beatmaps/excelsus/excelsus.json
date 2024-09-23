@@ -1,0 +1,1552 @@
+[
+    {
+        "beat": 0.0,
+        "hold": 4.0,
+        "key": "K"
+    },
+    {
+        "beat": 4.0,
+        "hold": 3.5,
+        "key": "J"
+    },
+    {
+        "beat": 7.5,
+        "hold": 4.0,
+        "key": "F"
+    },
+    {
+        "beat": 11.5,
+        "hold": 2.0,
+        "key": "D"
+    },
+    {
+        "beat": 14.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 14.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 15.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 15.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 15.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 16.5,
+        "hold": 1.75,
+        "key": "D"
+    },
+    {
+        "beat": 16.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 17.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 17.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 18.5,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 18.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 19.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 19.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 20.25,
+        "hold": 1.75,
+        "key": "F"
+    },
+    {
+        "beat": 20.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 21.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 21.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 22.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 22.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 23.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 23.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 24.0,
+        "hold": 1.75,
+        "key": "D"
+    },
+    {
+        "beat": 24.0,
+        "hold": 1.75,
+        "key": "J"
+    },
+    {
+        "beat": 26.0,
+        "hold": 1.75,
+        "key": "D"
+    },
+    {
+        "beat": 26.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 26.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 27.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 28.0,
+        "hold": 1.75,
+        "key": "J"
+    },
+    {
+        "beat": 28.0,
+        "hold": 1.75,
+        "key": "F"
+    },
+    {
+        "beat": 30.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 30.5,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 31.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 31.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 31.5,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 32.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 32.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 33.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 33.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 34.0,
+        "hold": 1.75,
+        "key": "F"
+    },
+    {
+        "beat": 34.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 35.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 35.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 36.0,
+        "hold": 1.75,
+        "key": "D"
+    },
+    {
+        "beat": 36.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 37.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 37.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 38.0,
+        "hold": 1.75,
+        "key": "F"
+    },
+    {
+        "beat": 38.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 39.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 39.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 40.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 40.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 41.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 41.75,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 42.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 42.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 43.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 43.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 44.5,
+        "hold": 1.25,
+        "key": "D"
+    },
+    {
+        "beat": 44.5,
+        "hold": 1.25,
+        "key": "F"
+    },
+    {
+        "beat": 44.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 45.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 46.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 46.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 47.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 47.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 48.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 48.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 49.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 49.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 50.0,
+        "hold": 1.75,
+        "key": "F"
+    },
+    {
+        "beat": 50.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 51.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 51.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 52.0,
+        "hold": 1.75,
+        "key": "D"
+    },
+    {
+        "beat": 52.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 53.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 53.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 54.0,
+        "hold": 1.75,
+        "key": "F"
+    },
+    {
+        "beat": 54.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 55.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 55.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 56.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 56.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 56.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 56.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 57.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 57.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 58.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 58.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 59.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 59.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 60.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 60.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 60.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 60.75,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 61.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 61.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 62.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 62.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 63.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 63.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 64.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 64.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 65.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 65.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 66.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 66.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 67.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 67.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 68.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 68.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 69.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 69.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 70.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 70.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 71.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 71.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 72.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 72.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 73.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 73.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 74.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 74.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 75.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 75.5,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 76.25,
+        "hold": 3.5,
+        "key": "F"
+    },
+    {
+        "beat": 76.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 77.0,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 77.5,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 78.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 79.0,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 80.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 80.25,
+        "hold": 3.5,
+        "key": "F"
+    },
+    {
+        "beat": 80.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 81.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 81.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 82.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 82.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 83.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 83.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 84.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 84.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 84.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 85.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 85.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 86.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 86.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 87.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 87.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 88.25,
+        "hold": 3.5,
+        "key": "F"
+    },
+    {
+        "beat": 88.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 88.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 89.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 89.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 90.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 90.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 91.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 91.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 92.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 92.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 92.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 93.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 93.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 94.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 94.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 95.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 95.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 96.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 96.25,
+        "hold": 3.5,
+        "key": "F"
+    },
+    {
+        "beat": 96.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 96.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 97.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 97.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 98.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 98.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 99.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 99.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 100.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 100.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 100.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 101.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 101.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 101.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 102.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 102.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 102.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 103.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 103.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 103.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 104.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 104.25,
+        "hold": 3.5,
+        "key": "F"
+    },
+    {
+        "beat": 104.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 104.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 105.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 105.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 106.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 106.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 107.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 107.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 108.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 108.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 108.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 109.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 109.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 109.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 110.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 110.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 110.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 111.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 111.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 111.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 112.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 112.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 112.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 113.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 113.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 114.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 114.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 114.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 115.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 115.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 116.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 116.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 116.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 117.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 117.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 118.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 118.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 118.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 119.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 119.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 120.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 120.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 120.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 121.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 121.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 122.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 122.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 122.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 123.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 123.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 124.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 124.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 124.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 125.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 125.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 126.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 126.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 126.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 127.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 127.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 128.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 128.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 128.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 128.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 129.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 129.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 130.25,
+        "hold": 1.5,
+        "key": "D"
+    },
+    {
+        "beat": 130.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 130.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 130.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 131.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 131.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 132.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 132.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 132.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 132.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 133.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 133.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 133.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 133.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 134.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 134.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 134.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 134.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 135.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 135.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 135.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 135.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 136.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 136.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 136.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 136.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 137.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 137.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 138.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 138.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 138.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 139.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 139.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 140.25,
+        "hold": 3.5,
+        "key": "D"
+    },
+    {
+        "beat": 140.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 140.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 140.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 141.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 141.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 142.25,
+        "hold": 1.5,
+        "key": "F"
+    },
+    {
+        "beat": 142.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 142.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 143.25,
+        "hold": 0,
+        "key": "K"
+    },
+    {
+        "beat": 143.75,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 144.25,
+        "hold": 0,
+        "key": "D"
+    },
+    {
+        "beat": 144.25,
+        "hold": 0,
+        "key": "F"
+    },
+    {
+        "beat": 144.25,
+        "hold": 0,
+        "key": "J"
+    },
+    {
+        "beat": 144.25,
+        "hold": 0,
+        "key": "K"
+    }
+]
