@@ -18,14 +18,15 @@ public class HoldNoteScript : MonoBehaviour, INote
         lifetime -= Time.deltaTime;
         if (beenHit && lifetime < 0) {
             if (perfectSparkPrefab != null) {
-                Instantiate(perfectSparkPrefab);
+                GameObject spark = Instantiate(perfectSparkPrefab, transform.position, Quaternion.identity);
+                Destroy(spark, 2);
             }
             Destroy(gameObject);
         }
     }
     void FixedUpdate()
     {
-        transform.position += speed * Time.fixedDeltaTime * transform.forward;
+        transform.position -= speed * Time.fixedDeltaTime * transform.forward;
     }
 
     public float hit(bool holding) {

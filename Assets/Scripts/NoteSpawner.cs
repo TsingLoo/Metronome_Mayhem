@@ -5,13 +5,14 @@ using UnityEngine;
 public class NoteSpawner : MonoBehaviour
 {
     public float distance, speed;
+    public float songEndBeat;
     public int bpm;
     public GameObject note, holdNote;
     public Transform[] lanePos;
     private float secPerBeat, dsptimesong, timeDelay;
     private float songPosition, songPosInBeats;
     private int ind;
-    private (float X, float D, KeysEnum K) [] beatmap;
+    private (double D, double X, char K) [] beatmap;
     private AudioSource AS;
     bool started, ended;
 
@@ -22,11 +23,11 @@ public class NoteSpawner : MonoBehaviour
         AS = GetComponent<AudioSource>();
         secPerBeat = 60f / bpm;
         ind = 0;
-        //beatmap = ....
+        beatmap = SongData.excelsus;
         started = false;
         ended = false;
 
-        //startSong();
+        startSong();
     }
 
     public void startSong() {
@@ -36,6 +37,7 @@ public class NoteSpawner : MonoBehaviour
     }
     public void endLevel() {
         ended = true;
+        AS.Stop();
         // ...
     }
 
@@ -46,27 +48,39 @@ public class NoteSpawner : MonoBehaviour
         songPosition = (float) (AudioSettings.dspTime - dsptimesong);
         songPosInBeats = songPosition / secPerBeat;
 
-        while (ind < beatmap.Length && beatmap[ind].X < songPosInBeats + timeDelay){
-            spawn(beatmap[ind].D * secPerBeat, beatmap[ind].K);
+        while (ind < beatmap.Length && (float) beatmap[ind].X < songPosInBeats + timeDelay){
+            spawn((float) beatmap[ind].D * secPerBeat, beatmap[ind].K);
             ind++;
         }
 
-        if (songPosInBeats > 600) endLevel();
+        if (songPosInBeats > songEndBeat) endLevel();
     }
 
-    private void spawn(float d, KeysEnum k) {
+    private void spawn(float d, char k) {
         int lane;
         switch(k) {
-        case KeysEnum.Z:
+        case 'D':
             lane = 0;
             break;
-        case KeysEnum.X:
+        case 'Z':
+            lane = 0;
+            break;
+        case 'F':
             lane = 1;
             break;
-        case KeysEnum.N:
+        case 'X':
+            lane = 1;
+            break;
+        case 'J':
             lane = 2;
             break;
-        case KeysEnum.M:
+        case 'N':
+            lane = 2;
+            break;
+        case 'K':
+            lane = 3;
+            break;
+        case 'M':
             lane = 3;
             break;
         default:
@@ -90,10 +104,5 @@ public class NoteSpawner : MonoBehaviour
             duration -= secPerBeat / 4;
             yield return new WaitForSeconds(secPerBeat / 4);
         }
-    }
-
-    public enum KeysEnum
-    {
-        Z, X, N, M
     }
 }

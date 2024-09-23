@@ -20,7 +20,7 @@ public class NoteScript : MonoBehaviour, INote
 
     void FixedUpdate()
     {
-        transform.position += speed * Time.fixedDeltaTime * transform.forward;
+        transform.position -= speed * Time.fixedDeltaTime * transform.forward;
     }
 
     public float hit(bool holding) {

@@ -12,21 +12,22 @@ public class InputScript : MonoBehaviour
     public Transform[] laneEndPos;
 
     public GameObject perfectSparkPrefab;
+    public GameObject excellentSparkPrefab;
     public GameObject greatSparkPrefab;
-    public GameObject goodSparkPrefab;
-    public GameObject badSparkPrefab;
+    public GameObject okSparkPrefab;
 
-    private float[] holdNoteTimer, cooldownTimer;
+    private float[] holdNoteTimer, cooldownTimer, noNoteCooldownTimer;
 
     void Start()
     {
         holdNoteTimer = new float[4];
         cooldownTimer = new float[4];
+        noNoteCooldownTimer = new float[4];
     }
 
     void Update()
     {
-        //replace with updated input system and preferred keys
+        //TODO: replace with new input system
 
         if (Input.GetKeyDown(KeyCode.Z)) {
             pressed(0, false);
@@ -63,9 +64,12 @@ public class InputScript : MonoBehaviour
             cooldownTimer[3] = keyReleaseInputCooldown;
             //deactivate laser
         }
+        
 
+        //don't touch
         TimerFunc(holdNoteTimer);
         TimerFunc(cooldownTimer);
+        TimerFunc(noNoteCooldownTimer);
     }
 
     private void pressed(int lane, bool hold) {
@@ -76,7 +80,11 @@ public class InputScript : MonoBehaviour
         
         Collider[] hitColliders = Physics.OverlapSphere(laneEndPos[lane].position, 0.8f);
         if (hitColliders.Length <= 0 && !(hold && holdNoteTimer[lane] > 0.001f)) {
-            GameManager.Instance.noNote();
+            if (noNoteCooldownTimer[lane] < 0.01f) {
+                noNoteCooldownTimer[lane] = 0.2f;
+                laneEndPos[lane].gameObject.GetComponent<ParticleSystem>().Emit(16);
+                GameManager.Instance.noNote();
+            }
             return;
         }
         foreach (var hitCollider in hitColliders) {
@@ -94,16 +102,16 @@ public class InputScript : MonoBehaviour
                 timing = Mathf.Abs(timing);
                 // Timing Windows, adjust as necessary;
                 if (timing > 0.09) {
-                    //instantiate spark
+                    spawnSpark(okSparkPrefab, hitCollider.transform.position);
                     GameManager.Instance.okNote();
                 } else if (timing > 0.036f) {
-                    //instantiate spark
+                    spawnSpark(greatSparkPrefab, hitCollider.transform.position);
                     GameManager.Instance.greatNote();
                 } else if (timing > 0.012f) {
-                    //instantiate spark
+                    spawnSpark(excellentSparkPrefab, hitCollider.transform.position);
                     GameManager.Instance.excellentNote();
                 } else {
-                    //instantiate spark
+                    spawnSpark(perfectSparkPrefab, hitCollider.transform.position);
                     GameManager.Instance.perfectNote();
                 }
                 holdNoteTimer[lane] = holdNoteInputCheckCooldown / 2;
@@ -113,10 +121,13 @@ public class InputScript : MonoBehaviour
 
     void OnTriggerEnter(Collider c) {
         GameManager.Instance.missedNote();
-        Destroy(c.gameObject, 1);
+        Destroy(c.gameObject, 2);
     }
 
-
+    void spawnSpark(GameObject sparkPrefab, Vector3 pos) {
+        GameObject spark = Instantiate(sparkPrefab, pos, Quaternion.identity);
+        Destroy(spark, 2);
+    }
     private void TimerFunc(float[] val){
         for (int i = 0; i < val.Length; i++) {
             if (val[i] > 0){
