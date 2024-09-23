@@ -29,6 +29,7 @@ public class InputScript : MonoBehaviour
     {
         //TODO: replace with new input system
 
+        /*
         if (Input.GetKeyDown(KeyCode.Z)) {
             pressed(0, false);
         } else if (Input.GetKey(KeyCode.Z)) {
@@ -64,6 +65,7 @@ public class InputScript : MonoBehaviour
             cooldownTimer[3] = keyReleaseInputCooldown;
             //deactivate laser
         }
+        */
         
 
         //don't touch
@@ -121,6 +123,7 @@ public class InputScript : MonoBehaviour
 
     void OnTriggerEnter(Collider c) {
         GameManager.Instance.missedNote();
+        Debug.Log("here");
         Destroy(c.gameObject, 2);
     }
 
