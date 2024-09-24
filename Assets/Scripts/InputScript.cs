@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputScript : MonoBehaviour
 {
-    //to be fine tuned
+    private int laneSize = 4;
+    
+    //MainInputactto be fine tuned
     public float keyReleaseInputCooldown;
     //to be fine tuned
     public float holdNoteInputCheckCooldown;
@@ -16,19 +20,57 @@ public class InputScript : MonoBehaviour
     public GameObject greatSparkPrefab;
     public GameObject okSparkPrefab;
 
+    MainInput mainInput;
+    private InputAction[] inputChannels;
+    
     private float[] holdNoteTimer, cooldownTimer, noNoteCooldownTimer;
+    private bool[] channelIsHold;
 
+    
+    void Awake()
+    {
+        mainInput = new MainInput();
+        mainInput.Enable();
+
+        inputChannels = new InputAction[8]
+        {
+            mainInput.inLevel.inputChannel0, 
+            mainInput.inLevel.inputChannel1,
+            mainInput.inLevel.inputChannel2, 
+            mainInput.inLevel.inputChannel3,
+            mainInput.inLevel.inputChannel4,
+            mainInput.inLevel.inputChannel5,
+            mainInput.inLevel.inputChannel6,
+            mainInput.inLevel.inputChannel7
+        };
+        
+        channelIsHold = new bool[inputChannels.Length];
+        
+        bindInputAction(inputChannels);
+    }
+    
     void Start()
     {
-        holdNoteTimer = new float[4];
-        cooldownTimer = new float[4];
-        noNoteCooldownTimer = new float[4];
+        holdNoteTimer = new float[laneSize];
+        cooldownTimer = new float[laneSize];
+        noNoteCooldownTimer = new float[laneSize];
     }
 
     void Update()
     {
         //TODO: replace with new input system
-
+        if (inputChannels != null)
+        {
+            for (int i = 0; i < inputChannels.Length; i++)
+            {
+                int laneIdx = i % laneSize;
+                if (channelIsHold[i] && !inputChannels[i].WasPressedThisFrame() && !inputChannels[laneIdx].WasPressedThisFrame())
+                {
+                     //Debug.Log("inputChannels[" + laneIdx + "] " + inputChannels[i].name + " is hold");
+                     pressed(laneIdx, true);
+                }
+            }
+        }
         /*
         if (Input.GetKeyDown(KeyCode.Z)) {
             pressed(0, false);
@@ -66,12 +108,55 @@ public class InputScript : MonoBehaviour
             //deactivate laser
         }
         */
-        
-
         //don't touch
         TimerFunc(holdNoteTimer);
         TimerFunc(cooldownTimer);
         TimerFunc(noNoteCooldownTimer);
+    }
+
+    void bindInputAction(InputAction[] actions)
+    {
+        foreach (var action in actions)
+        {
+            action.started += HandleInputStart;
+            action.canceled += HandleInputCancel;
+        }
+    }
+
+    private void HandleInputStart(InputAction.CallbackContext context)
+    {
+        Debug.Log($"InputAction {context.action.name} started at time {context.time}");
+
+        int channelIdx = GetChannelIdx(context.action.name);
+
+        pressed(GetLaneIdxByChannelIdx(channelIdx), false);
+
+        channelIsHold[channelIdx] = true;
+    }
+
+    // private void performed(InputAction.CallbackContext context)
+    // {
+    //     pressed(GetLaneByKeycord(context.action.name), true);
+    // }
+
+    private void HandleInputCancel(InputAction.CallbackContext context)
+    {
+        int channelIdx = GetChannelIdx(context.action.name);
+        int laneIdx = GetLaneIdxByChannelIdx(channelIdx);
+        cooldownTimer[laneIdx] = keyReleaseInputCooldown;
+        channelIsHold[channelIdx] = false;
+    }
+
+    int GetChannelIdx(string inputChannelName)
+    {
+        int channelIdx = Int32.Parse(inputChannelName.Substring(12));
+        //Debug.Log($"{inputChannelName} is mapped to Lane {lane}");
+        return channelIdx;
+    }
+
+    int GetLaneIdxByChannelIdx(int channelIdx)
+    {
+        return channelIdx % laneSize;
     }
 
     private void pressed(int lane, bool hold) {
@@ -123,7 +208,7 @@ public class InputScript : MonoBehaviour
 
     void OnTriggerEnter(Collider c) {
         GameManager.Instance.missedNote();
-        Debug.Log("here");
+        //Debug.Log("here");
         Destroy(c.gameObject, 2);
     }
 
