@@ -19,7 +19,7 @@ namespace Group12
 
         private Note[] _notes;
         private float _score;
-        int _currentNoteIdx;
+        int _currentNoteIdx = -1;
         private float _currentProgress;
         private InputAction _actionChannel;
 
@@ -38,11 +38,12 @@ namespace Group12
         
         private Note curNote { get { return _notes[_currentNoteIdx]; } }
         
-        public Lane(InputAction actionChannel, Note[] notes, int noteStartIdex = 0)
+        public Lane(InputAction actionChannel, Note[] notes, int noteStartIdx = 0)
         {
             _actionChannel = actionChannel;
             _notes = notes;
-            _currentNoteIdx = noteStartIdex;
+            _currentNoteIdx = noteStartIdx - 1;
+            NextNote();
             
             _actionChannel.started += HandlePress;
             _actionChannel.canceled += HandleRelease;
@@ -51,6 +52,11 @@ namespace Group12
         void HandlePress(InputAction.CallbackContext context)
         {
             //Debug.Log($"[{nameof(HandlePress)}]  {context} Pressed)]");
+            if(context.startTime < missingFloor)
+            {
+                Debug.Log($"[{nameof(HandlePress)}] Do Nothing ...");
+                return;
+            } 
             
             if (excellentFloor < context.startTime && context.startTime < excellentCeil)
             {
@@ -64,10 +70,8 @@ namespace Group12
             {
                 Debug.Log($"[{nameof(HandlePress)}] Fair Press !!!!");
             }
-            else if(context.startTime < missingFloor)
-            {
-                Debug.Log($"[{nameof(HandlePress)}] Do Nothing ...");
-            }
+
+            NextNote();
         } 
 
         void HandleRelease(InputAction.CallbackContext context)
@@ -76,26 +80,31 @@ namespace Group12
 
         void HandleTimeout()
         {
-            
-        }
-
-        
-        //If pressed too early, nothing happened
-        void fn()
-        {
-            float progress = 0f;
-            DOTween.To(() => progress, x => progress = x, 1f,   (_notes[_currentNoteIdx].pressMoment + _notes[_currentNoteIdx].missingTolerance) - _notes[_currentNoteIdx].spawnMoment )
-                .SetId($"{_notes[_currentNoteIdx].GetHashCode()}").OnComplete(() =>
-                    {
-                        HandleTimeout();
-                        NextNote();
-                    }
-                );
-            
+            Debug.Log($"[{nameof(HandleTimeout)}] Timeout ...");
+            NextNote();
         }
 
         void NextNote()
         {
+            _currentNoteIdx += 1;
+            
+            if(_currentNoteIdx >= _notes.Length)
+                return;
+            
+            Debug.Log($"[{nameof(NextNote)}] Next Note is {_notes[_currentNoteIdx]}");
+
+            if (_currentNoteIdx - 1 >= 0)
+            {
+                DOTween.Kill(_notes[_currentNoteIdx - 1].GetHashCode());
+            }
+            
+            float progress = 0f;
+            DOTween.To(() => progress, x => progress = x, 1f,   missingCeiling - Time.time)
+                .SetId(curNote.GetHashCode()).OnComplete(() =>
+                    {
+                        HandleTimeout();
+                    }
+                );
         }
     }
 
@@ -137,8 +146,13 @@ namespace Group12
             this.fairTolerance = fairTolerance;
             this.missingTolerance = missingTolerance;
         }
-        
+
+        public override string ToString()
+        {
+            return $"[{nameof(Note)}] {this.GetHashCode()} pressMoment:{pressMoment }";
+        }
     }
+    
 
     // public class TapNote : Note
     // {
