@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,47 @@ namespace Group12
         //add variables that keep track of the current score, combo, number of Good/Bad, etc\
 
         public static GameManager Instance { get; private set; }
+        
+        Lane[] lanes;
 
+        private MainInput _mainInput;
+        
         private void Awake()
         {
+
+            _mainInput = new MainInput();
+            _mainInput.Enable();
+            
+            
+            // Generate some dummy Note data
+            Note[] notes = new Note[]
+            {
+                new Note(
+                    spawnMoment: 1.0f, 
+                    pressMoment: 7.0f, 
+                    pressMomentPadding: 0.1f, 
+                    excellentTolerance: 0.05f, 
+                    goodTolerance: 0.1f, 
+                    fairTolerance: 0.2f, 
+                    missingTolerance: 0.5f
+                ),
+                new Note(
+                    spawnMoment: 3.0f, 
+                    pressMoment: 10.0f, 
+                    pressMomentPadding: 0.15f, 
+                    excellentTolerance: 0.05f, 
+                    goodTolerance: 0.12f, 
+                    fairTolerance: 0.25f, 
+                    missingTolerance: 0.6f
+                )
+            };
+
+            // Initialize Lane with some dummy data
+            lanes = new Lane[]
+            {
+                new Lane(_mainInput.inLevel.inputChannel0, notes)
+            };
+            
             if (Instance != null && Instance != this)
             {
                 Destroy(this);
@@ -26,6 +65,12 @@ namespace Group12
                 Instance = this;
             }
             combo = 0;
+        }
+
+        private void OnDestroy()
+        {
+            _mainInput.Disable();
+            
         }
 
         public void noNote()
