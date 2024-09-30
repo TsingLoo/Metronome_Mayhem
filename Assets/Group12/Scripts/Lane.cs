@@ -33,7 +33,7 @@ namespace Group12
         float fairFloor { get { return goodFloor - curNote.fairTolerance;}}
         float fairCeil { get { return goodCeil + curNote.fairTolerance;}}
         float missingFloor { get { return fairFloor - curNote.missingTolerance; }}
-        float missingCeiling { get { return fairCeil - curNote.missingTolerance; }}
+        float missingCeiling { get { return fairCeil + curNote.missingTolerance; }}
 #endregion
         
         private Note curNote { get { return _notes[_currentNoteIdx]; } }
@@ -42,8 +42,8 @@ namespace Group12
         {
             _actionChannel = actionChannel;
             _notes = notes;
-            _currentNoteIdx = noteStartIdx - 1;
-            NextNote();
+            //_currentNoteIdx = noteStartIdx - 1;
+            NextNote(noteStartIdx);
             
             _actionChannel.started += HandlePress;
             _actionChannel.canceled += HandleRelease;
@@ -52,7 +52,7 @@ namespace Group12
         void HandlePress(InputAction.CallbackContext context)
         {
             //Debug.Log($"[{nameof(HandlePress)}]  {context} Pressed)]");
-            if(context.startTime < missingFloor)
+            if(context.startTime < missingFloor )
             {
                 Debug.Log($"[{nameof(HandlePress)}] Do Nothing ...");
                 return;
@@ -69,8 +69,13 @@ namespace Group12
             else if (fairFloor < context.startTime && context.startTime < fairCeil) 
             {
                 Debug.Log($"[{nameof(HandlePress)}] Fair Press !!!!");
+                
+            }else if (context.startTime < missingCeiling)
+            {
+                Debug.Log($"[{nameof(HandlePress)}] Miss Press!!!!");
             }
 
+            Debug.Log($"[{nameof(HandlePress)}] Press {curNote.GetHashCode()}, Go to Next Note ... !!!!");
             NextNote();
         } 
 
@@ -80,23 +85,33 @@ namespace Group12
 
         void HandleTimeout()
         {
-            Debug.Log($"[{nameof(HandleTimeout)}] Timeout ...");
+            Debug.Log($"[{nameof(HandleTimeout)}] {nameof(missingCeiling)} is {missingCeiling} Timeout ... At {Time.time}");
             NextNote();
         }
 
-        void NextNote()
+        void NextNote(int noteIdx = -1)
         {
-            _currentNoteIdx += 1;
-            
-            if(_currentNoteIdx >= _notes.Length)
-                return;
-            
-            Debug.Log($"[{nameof(NextNote)}] Next Note is {_notes[_currentNoteIdx]}");
+            if (noteIdx != -1)
+            {
+                _currentNoteIdx = noteIdx;
+            }
+            else
+            {
+                if (_currentNoteIdx + 1 >= _notes.Length)
+                {
+                    Debug.LogWarning($"[{nameof(NextNote)}] There is no next note at this time");
+                    return;
+                }
 
+                _currentNoteIdx += 1;
+            }
+            
+            Debug.Log($"[{nameof(NextNote)}] Cur Note is {_notes[_currentNoteIdx]}");
             if (_currentNoteIdx - 1 >= 0)
             {
                 DOTween.Kill(_notes[_currentNoteIdx - 1].GetHashCode());
             }
+            
             
             float progress = 0f;
             DOTween.To(() => progress, x => progress = x, 1f,   missingCeiling - Time.time)
