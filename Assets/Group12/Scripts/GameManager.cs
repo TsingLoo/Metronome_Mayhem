@@ -28,11 +28,16 @@ namespace Group12
             combo = 0;
         }
 
+        public int getCombo()
+        {
+            return combo; 
+        }
+
         public void noNote()
         {
             // remove combo, decrease health
             MyHealth.ChangeHealth(-5);
-            //combo = 0;
+            combo = 0;
         }
 
         public void missedNote()
@@ -40,7 +45,7 @@ namespace Group12
             // add a Miss, remove combo, decrease health
             missedNum++;
             MyHealth.ChangeHealth(-5);
-            //combo = 0;
+            combo = 0;
 
         }
 
@@ -50,7 +55,7 @@ namespace Group12
             okNum++;
             MyHealth.ChangeHealth(-3);
             combo++;
-            Debug.Log("Combo: " + combo);
+            //Debug.Log("Combo: " + combo);
         }
 
         public void greatNote()
@@ -59,7 +64,7 @@ namespace Group12
             greatNum++;
             MyHealth.ChangeHealth(-1);
             combo++;
-            Debug.Log("Combo: " + combo);
+            //Debug.Log("Combo: " + combo);
         }
 
         public void excellentNote()
@@ -68,7 +73,7 @@ namespace Group12
             excellentNum++;
             MyHealth.ChangeHealth(1);
             combo++;
-            Debug.Log("Combo: " + combo);
+            //Debug.Log("Combo: " + combo);
         }
 
         public void perfectNote()
@@ -77,7 +82,7 @@ namespace Group12
             perfectNum++;
             MyHealth.ChangeHealth(5);
             combo++;
-            Debug.Log("Combo: " + combo);
+            //Debug.Log("Combo: " + combo);
         }
     }
 }
