@@ -31,6 +31,7 @@ namespace Group12
             Note[] notes = new Note[]
             {
                 new Note(
+                    GetComponent<NoteSpawner>().note,
                     spawnMoment: 1.0f, 
                     pressMoment: 7.0f, 
                     pressMomentPadding: 0.1f, 
@@ -40,6 +41,7 @@ namespace Group12
                     missingTolerance: 0.5f
                 ),
                 new Note(
+                    GetComponent<NoteSpawner>().note,
                     spawnMoment: 3.0f, 
                     pressMoment: 10.0f, 
                     pressMomentPadding: 0.15f, 
@@ -53,7 +55,7 @@ namespace Group12
             // Initialize Lane with some dummy data
             lanes = new Lane[]
             {
-                new Lane(_mainInput.inLevel.inputChannel0, notes)
+                new Lane(_mainInput.inLevel.inputChannel0, notes, transform.GetChild(0))
             };
             
             if (Instance != null && Instance != this)

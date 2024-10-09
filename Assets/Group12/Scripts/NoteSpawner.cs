@@ -101,7 +101,7 @@ namespace Group12
             {
                 GameObject beat = Instantiate(note, lanePos[lane].position + new Vector3(0, 0.2f, 0),
                     Quaternion.Euler(-Vector3.forward));
-                beat.GetComponent<NoteScript>().init(speed, timeDelay);
+                //beat.GetComponent<NoteScript>().init(speed, timeDelay);
             }
             else
             {
