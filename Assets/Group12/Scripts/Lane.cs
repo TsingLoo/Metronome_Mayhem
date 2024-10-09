@@ -221,6 +221,7 @@ namespace Group12
 
         public float spawnMoment { get;}
         public float pressMoment { get;}
+        public float releaseMoment { get;}
 
         public float pressMomentPadding { get; }
 
@@ -238,13 +239,14 @@ namespace Group12
         private UnityAction<float> onPress;
         UnityAction<float> onRelease;
         
-        public Note(GameObject obj, float spawnMoment, float pressMoment, float pressMomentPadding, 
+        public Note(GameObject obj, float spawnMoment, float pressMoment, float releaseMoment, float pressMomentPadding, 
             float excellentTolerance, float goodTolerance, float fairTolerance, 
             float missingTolerance)
         {
             this.gameObject = obj;
             this.spawnMoment = spawnMoment;
             this.pressMoment = pressMoment;
+            this.releaseMoment = releaseMoment;
             this.pressMomentPadding = pressMomentPadding;
             this.excellentTolerance = excellentTolerance;
             this.goodTolerance = goodTolerance;

@@ -1,63 +1,45 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Group12
 {
-    
     public class GameManager : MonoBehaviour
     {
-        public Health MyHealth; 
+        public Health MyHealth;
         private int totalNotes;
         [SerializeField] private int missedNum, perfectNum, excellentNum, greatNum, okNum;
         private int combo;
         //add variables that keep track of the current score, combo, number of Good/Bad, etc\
 
         public static GameManager Instance { get; private set; }
-        
+
         Lane[] lanes;
 
         private MainInput _mainInput;
-        
+
         private void Awake()
         {
-
             _mainInput = new MainInput();
             _mainInput.Enable();
             
-            
-            // Generate some dummy Note data
-            Note[] notes = new Note[]
-            {
+            var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
+            lanes = beatmap.Select((beats, i) => new Lane(_mainInput.inLevel.inputChannel0, beats.Select(beat =>
                 new Note(
                     GetComponent<NoteSpawner>().note,
-                    spawnMoment: 1.0f, 
-                    pressMoment: 7.0f, 
-                    pressMomentPadding: 0.1f, 
-                    excellentTolerance: 0.05f, 
-                    goodTolerance: 0.1f, 
-                    fairTolerance: 0.2f, 
-                    missingTolerance: 0.5f
-                ),
-                new Note(
-                    GetComponent<NoteSpawner>().note,
-                    spawnMoment: 3.0f, 
-                    pressMoment: 10.0f, 
-                    pressMomentPadding: 0.15f, 
-                    excellentTolerance: 0.05f, 
-                    goodTolerance: 0.12f, 
-                    fairTolerance: 0.25f, 
+                    spawnMoment: 3.0f,
+                    pressMoment: beat.beat,
+                    releaseMoment: beat.beat + beat.hold,
+                    pressMomentPadding: 0.15f,
+                    excellentTolerance: 0.05f,
+                    goodTolerance: 0.12f,
+                    fairTolerance: 0.25f,
                     missingTolerance: 0.6f
-                )
-            };
+                )).ToArray(), transform.GetChild(i))
+            ).ToArray();
 
-            // Initialize Lane with some dummy data
-            lanes = new Lane[]
-            {
-                new Lane(_mainInput.inLevel.inputChannel0, notes, transform.GetChild(0))
-            };
-            
             if (Instance != null && Instance != this)
             {
                 Destroy(this);
@@ -66,13 +48,13 @@ namespace Group12
             {
                 Instance = this;
             }
+
             combo = 0;
         }
 
         private void OnDestroy()
         {
             _mainInput.Disable();
-            
         }
 
         public void noNote()
@@ -88,7 +70,6 @@ namespace Group12
             missedNum++;
             MyHealth.ChangeHealth(-5);
             //combo = 0;
-
         }
 
         public void okNote()
