@@ -46,36 +46,36 @@ namespace Group12
         private void Start()
         {
             var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
-            // lanes = beatmap.Select((beats, i) => new Lane(inputChannels[i], beats.Select(beat =>
-            //     new Note(
-            //         GetComponent<NoteSpawner>().note,
-            //         speed: beat.speed,
-            //         pressMoment: beat.beat,
-            //         releaseMoment: beat.beat + beat.hold,
-            //         pressMomentPadding: 0.03f,
-            //         excellentTolerance: 0.05f,
-            //         goodTolerance: 0.05f,
-            //         fairTolerance: 0.05f,
-            //         missingTolerance: 0.2f
-            //     )).ToArray(), transform.GetChild(i))
-            // ).ToArray();
-
-            var firstLane = new Lane(
-                inputChannels[0], // Use the first input channel
-                beatmap[0].Select(beat => new Note(
+            lanes = beatmap.Select((beats, i) => new Lane(inputChannels[i], beats.Select(beat =>
+                new Note(
                     GetComponent<NoteSpawner>().note,
                     speed: beat.speed,
                     pressMoment: beat.beat,
-                    releaseMoment: -1,
-                    //releaseMoment: beat.hold == 0 ? -1: beat.beat + beat.hold,
-                    pressMomentPadding: 0.15f,
+                    releaseMoment: beat.beat + beat.hold,
+                    pressMomentPadding: 0.03f,
                     excellentTolerance: 0.05f,
-                    goodTolerance: 0.12f,
-                    fairTolerance: 0.25f,
-                    missingTolerance: 0.6f
-                )).ToArray(),
-                transform.GetChild(0) // Use the first child
-            );
+                    goodTolerance: 0.05f,
+                    fairTolerance: 0.05f,
+                    missingTolerance: 0.2f
+                )).ToArray(), transform.GetChild(i))
+            ).ToArray();
+
+            // var firstLane = new Lane(
+            //     inputChannels[0], // Use the first input channel
+            //     beatmap[0].Select(beat => new Note(
+            //         GetComponent<NoteSpawner>().note,
+            //         speed: beat.speed,
+            //         pressMoment: beat.beat,
+            //         releaseMoment: -1,
+            //         //releaseMoment: beat.hold == 0 ? -1: beat.beat + beat.hold,
+            //         pressMomentPadding: 0.15f,
+            //         excellentTolerance: 0.05f,
+            //         goodTolerance: 0.12f,
+            //         fairTolerance: 0.25f,
+            //         missingTolerance: 0.6f
+            //     )).ToArray(),
+            //     transform.GetChild(0) // Use the first child
+            // );
 
             //lanes = new[] { firstLane };
             
