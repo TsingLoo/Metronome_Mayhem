@@ -3,1860 +3,1860 @@
     "beat": 0.0,
     "hold": 4.0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 4.0,
     "hold": 3.5,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 7.5,
     "hold": 4.0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 11.5,
     "hold": 2.0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 14.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 14.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 15.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 15.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 15.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 16.5,
     "hold": 1.75,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 16.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 17.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 17.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 18.5,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 18.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 19.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 19.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 20.25,
     "hold": 1.75,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 20.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 21.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 21.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 22.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 22.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 23.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 23.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 24.0,
     "hold": 1.75,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 24.0,
     "hold": 1.75,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 26.0,
     "hold": 1.75,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 26.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 26.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 27.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 28.0,
     "hold": 1.75,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 28.0,
     "hold": 1.75,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 30.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 30.5,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 31.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 31.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 31.5,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 32.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 32.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 33.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 33.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 34.0,
     "hold": 1.75,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 34.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 35.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 35.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 36.0,
     "hold": 1.75,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 36.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 37.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 37.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 38.0,
     "hold": 1.75,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 38.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 39.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 39.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 40.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 40.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 41.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 41.75,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 42.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 42.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 43.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 43.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 44.5,
     "hold": 1.25,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 44.5,
     "hold": 1.25,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 44.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 45.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 46.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 46.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 47.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 47.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 48.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 48.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 49.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 49.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 50.0,
     "hold": 1.75,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 50.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 51.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 51.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 52.0,
     "hold": 1.75,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 52.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 53.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 53.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 54.0,
     "hold": 1.75,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 54.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 55.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 55.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 56.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 56.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 56.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 56.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 57.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 57.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 58.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 58.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 59.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 59.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 60.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 60.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 60.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 60.75,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 61.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 61.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 62.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 62.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 63.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 63.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 64.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 64.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 65.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 65.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 66.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 66.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 67.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 67.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 68.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 68.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 69.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 69.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 70.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 70.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 71.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 71.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 72.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 72.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 73.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 73.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 74.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 74.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 75.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 75.5,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 76.25,
     "hold": 3.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 76.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 77.0,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 77.5,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 78.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 79.0,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 80.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 80.25,
     "hold": 3.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 80.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 81.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 81.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 82.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 82.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 83.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 83.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 84.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 84.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 84.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 85.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 85.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 86.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 86.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 87.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 87.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 88.25,
     "hold": 3.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 88.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 88.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 89.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 89.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 90.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 90.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 91.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 91.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 92.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 92.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 92.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 93.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 93.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 94.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 94.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 95.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 95.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 96.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 96.25,
     "hold": 3.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 96.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 96.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 97.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 97.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 98.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 98.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 99.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 99.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 100.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 100.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 100.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 101.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 101.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 101.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 102.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 102.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 102.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 103.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 103.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 103.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 104.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 104.25,
     "hold": 3.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 104.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 104.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 105.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 105.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 106.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 106.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 107.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 107.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 108.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 108.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 108.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 109.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 109.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 109.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 110.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 110.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 110.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 111.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 111.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 111.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 112.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 112.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 112.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 113.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 113.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 114.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 114.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 114.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 115.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 115.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 116.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 116.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 116.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 117.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 117.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 118.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 118.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 118.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 119.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 119.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 120.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 120.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 120.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 121.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 121.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 122.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 122.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 122.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 123.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 123.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 124.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 124.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 124.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 125.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 125.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 126.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 126.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 126.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 127.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 127.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 128.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 128.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 128.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 128.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 129.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 129.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 130.25,
     "hold": 1.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 130.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 130.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 130.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 131.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 131.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 132.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 132.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 132.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 132.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 133.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 133.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 133.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 133.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 134.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 134.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 134.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 134.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 135.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 135.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 135.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 135.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 136.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 136.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 136.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 136.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 137.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 137.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 138.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 138.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 138.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 139.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 139.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 140.25,
     "hold": 3.5,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 140.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 140.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 140.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 141.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 141.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 142.25,
     "hold": 1.5,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 142.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 142.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 143.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 143.75,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 144.25,
     "hold": 0,
     "key": 0,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 144.25,
     "hold": 0,
     "key": 1,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 144.25,
     "hold": 0,
     "key": 2,
-    "speed": 1
+    "speed": 5
   },
   {
     "beat": 144.25,
     "hold": 0,
     "key": 3,
-    "speed": 1
+    "speed": 5
   }
 ]

@@ -55,7 +55,7 @@ namespace Group12
 
             while (ind < beatmap.Length && (float)beatmap[ind].X < songPosInBeats + timeDelay)
             {
-                spawn((float)beatmap[ind].D * secPerBeat, beatmap[ind].K);
+                //spawn((float)beatmap[ind].D * secPerBeat, beatmap[ind].K);
                 ind++;
             }
 

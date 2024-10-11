@@ -14,6 +14,7 @@ namespace Group12
             public float beat;
             public float hold;
             public int key;
+            public int speed;
         }
         
         public static Beat[][] load(string fileName)
