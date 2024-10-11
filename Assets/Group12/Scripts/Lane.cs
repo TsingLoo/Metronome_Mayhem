@@ -241,8 +241,9 @@ namespace Group12
                 $"[{nameof(SpawnNote)}] Spawning Note {note.GetHashCode()} at time: {Time.time}, it is supposed to {note.spawnMoment}, the offset is {_timingOffset}");
             var go = Object.Instantiate(note.gameObject as GameObject, _spawnTransform);
             go.name = $"{note.GetHashCode()}";
-            go.transform.localScale = new Vector3(1.5f, 0.4f,
-                (note.releaseMoment - note.pressMoment + 2 * note.missingTolerance) * note.speed);
+            float length = (note.releaseMoment - note.pressMoment + 2 * note.missingTolerance) * note.speed;
+            go.transform.localScale = new Vector3(1.5f, 0.4f, length);
+            go.transform.position = _spawnTransform.position + new Vector3(0, 0, length / 2);
 
             float fullLength = _length + _lengthPadding;
             float velocity = _length / (note.pressMoment - note.spawnMoment + _visualOffset);
