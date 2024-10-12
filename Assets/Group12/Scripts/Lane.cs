@@ -23,7 +23,7 @@ namespace Group12
         Missed,
         Undefined
     }
-    
+
     public class Lane
     {
         private float initTime;
@@ -33,7 +33,7 @@ namespace Group12
 
         float _timingOffset;
 
-        
+
         public float _laneTime
         {
             get { return Time.time - initTime + _timingOffset; }
@@ -52,7 +52,7 @@ namespace Group12
 
 
         #region Timing Definitions
-        
+
         float fullLength
         {
             get { return _laneLength + _lengthPadding; }
@@ -77,40 +77,40 @@ namespace Group12
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Perfect Action  on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoPerfectNote();
-                return  timingGrade.Excellent;
+                return timingGrade.Excellent;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.excellentTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Excellent Action  on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoExcellentNote();
-                return  timingGrade.Excellent;
+                return timingGrade.Excellent;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.greatTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Great Action on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoGreatNote();
-                return  timingGrade.Great;
+                return timingGrade.Great;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.okTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Ok Action on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoOkNote();
-                return  timingGrade.Ok;
+                return timingGrade.Ok;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.missedTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Miss Action on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoMissedNote();
-                return  timingGrade.Missed;
+                return timingGrade.Missed;
             }
-            
-            return timingGrade.Undefined; 
+
+            return timingGrade.Undefined;
         }
-        
+
         private Note curNote
         {
             get { return _notes[_currentNoteIdx]; }
@@ -161,7 +161,7 @@ namespace Group12
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
 
             GetTimingGrade(actionInGameTime, curNote.pressMoment);
-            
+
             // if (excellentFloor < actionInGameTime && actionInGameTime < excellentCeil)
             // {
             //     Debug.Log(
@@ -207,15 +207,14 @@ namespace Group12
                 foreach (var note in _notes)
                 {
                     float delay = note.spawnMoment;
-                    
-                    
+
                     //float delay = note.spawnMoment - Time.time;
                     Debug.Log(
                         $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name}{note.GetHashCode()} RealTime .s tims is BEFORE IS   {Time.realtimeSinceStartup}");
                     Debug.Log(
                         $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name}{note.GetHashCode()} Time.time BEFORE IS   {Time.time}");
-                    
-                    
+
+
                     DOVirtual.DelayedCall(delay, () =>
                     {
                         _timingOffset = delay - (Time.time - initTime);
@@ -243,27 +242,30 @@ namespace Group12
             go.transform.position = _spawnTransform.position + new Vector3(0, 0, noteLength / 2);
 
             float fullMoveLength = _laneLength + _lengthPadding;
-            
-            Debug.Log($"[Arrive] {note.GetHashCode()} Suppose to arrive at {_laneLength / note.speed + note.spawnMoment}, lanelength is {_laneLength}, note.speed is {note.speed}, note.spwanMoment is {note.spawnMoment}");
-            
+
+            Debug.Log(
+                $"[Arrive] {note.GetHashCode()} Suppose to arrive at {_laneLength / note.speed + note.spawnMoment}, lanelength is {_laneLength}, note.speed is {note.speed}, note.spwanMoment is {note.spawnMoment}");
+
             //float velocity = _length / (note.pressMoment - note.spawnMoment + _visualOffset);
 
-            go.transform.DOLocalMoveZ(- fullMoveLength + noteLength / 2,  fullMoveLength / note.speed).SetEase(Ease.Linear).OnUpdate(
-                () =>
-                {
-                    if (_laneTime == note.pressMoment)
+            go.transform.DOLocalMoveZ(-fullMoveLength + noteLength / 2, fullMoveLength / note.speed)
+                .SetEase(Ease.Linear).OnUpdate(
+                    () =>
                     {
-                        Debug.Log($"[NotePos] {note.GetHashCode()} is at Pos {go.transform.localPosition}");
+                        if (_laneTime == note.pressMoment)
+                        {
+                            Debug.Log($"[NotePos] {note.GetHashCode()} is at Pos {go.transform.localPosition}");
+                        }
                     }
-                }
-            );
+                );
 
             //Debug.Log($"[]");
 
             //float progress = 0f;
 
 
-            DOVirtual.DelayedCall(note.pressMoment + note.missedTolerance + initTime - Time.time, () => { HandleTimeout(note); }, false)
+            DOVirtual.DelayedCall(note.pressMoment + note.missedTolerance + initTime - Time.time,
+                    () => { HandleTimeout(note); }, false)
                 .SetId(note.GetHashCode());
 
             // DOTween.To(() => progress, x => progress = x, 1f,   note.missingCeiling + initTime - Time.time)
@@ -279,7 +281,7 @@ namespace Group12
             if (!curNote.IsHoldNote) return;
             float time = _laneTime;
             float releaseTime = curNote.releaseMoment;
-            
+
             // Debug.Log(
             //     $"[{nameof(HandleRelease)}]  {context.action.name} Pressed {curNote.GetHashCode()} at {time} : {curNote.pressMoment}, {curNote.releaseMoment} " +
             //     $"missingFloor: {missingFloor}, missingCeiling: {missingCeiling}, " +
@@ -288,7 +290,7 @@ namespace Group12
             //     $"fairFloor: {fairFloor}, fairCeiling: {fairCeil}");
 
             // avoid multi next within one beat
-            
+
             //if (actionInGameTime < curNote.pressMoment - curNote.excellentTolerance)
             if (time < curNote.pressMoment - curNote.excellentTolerance)
             {
@@ -299,9 +301,9 @@ namespace Group12
 
             Debug.Log($"[{nameof(NextNote)}] Trying to kill the timeout of {_notes[_currentNoteIdx].GetHashCode()}");
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
-            
+
             GetTimingGrade(time, releaseTime);
-            
+
             // if (Math.Abs(time - releaseTime) < curNote.excellentTolerance)
             // {
             //     Debug.Log(
@@ -325,7 +327,7 @@ namespace Group12
 
             Debug.Log(
                 $"[{nameof(HandleRelease)}][KeyReleased: {{context.action.name}}] Press {curNote.GetHashCode()}, Try to go to Next Note ...!!!!");
-        
+
             HandleHoldEnd();
             NextNote();
         }
@@ -339,7 +341,6 @@ namespace Group12
 
         void HandleHoldStart()
         {
-            
         }
 
         void HandleHoldEnd()

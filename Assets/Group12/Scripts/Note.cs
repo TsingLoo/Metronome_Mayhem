@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Note
+namespace Group12
+{
+    public class Note
     {
         public GameObject gameObject { get; }
 
@@ -58,7 +60,7 @@ public class Note
 
             this.spawnMoment = this.pressMoment - laneLength / speed;
         }
-        
+
 
         public override string ToString()
         {
@@ -77,3 +79,4 @@ public class Note
     //     private float releaseMoment;
     //     
     // }
+}
