@@ -175,7 +175,7 @@ namespace Group12
 
         public void DoMissedNote(int sourceIdx)
         {
-            FxManager.Instance.PlayActionFx(sourceIdx,timingGrade.Missed);
+            //FxManager.Instance.PlayActionFx(sourceIdx,timingGrade.Missed);
             // add a Miss, remove combo, decrease health
             missedNum++;
             MyHealth.ChangeHealth(-5);

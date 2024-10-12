@@ -323,6 +323,7 @@ namespace Group12
         void HandleTimeout(Note note)
         {
             GameManager.Instance.DoMissedNote(LaneIdx);
+            FxManager.Instance.PlayActionFx(LaneIdx,timingGrade.Missed);
             //Debug.Log($"[{nameof(HandleTimeout)}] {nameof()} of {note.GetHashCode()} is {missingCeiling} Timeout ... At {_laneTime}");
             NextNote();
         }
