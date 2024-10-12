@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,11 +17,14 @@ namespace Group12
         private int combo;
         //add variables that keep track of the current score, combo, number of Good/Bad, etc\
 
+        [SerializeField] TMP_Text timer_text;
         public static GameManager Instance { get; private set; }
         
         InputAction[] inputChannels; 
         Lane[] lanes;
 
+        float _laneLength = 25f;
+        
         private MainInput _mainInput;
 
         private void Awake()
@@ -56,8 +60,9 @@ namespace Group12
                     excellentTolerance: 0.05f,
                     goodTolerance: 0.05f,
                     fairTolerance: 0.05f,
-                    missingTolerance: 0.2f
-                )).ToArray(), transform.GetChild(i))
+                    missingTolerance: 0.2f,
+                    laneLength: _laneLength
+                )).ToArray(), transform.GetChild(i), _laneLength)
             ).ToArray();
 
             // var firstLane = new Lane(
@@ -89,6 +94,11 @@ namespace Group12
             }
 
             combo = 0;
+        }
+
+        void Update()
+        {
+            timer_text.text = $"{lanes[0]._laneTime}";
         }
 
         private void OnDestroy()
