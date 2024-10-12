@@ -83,8 +83,9 @@ namespace Group12
                 {
                     readyCountDown_text.gameObject.SetActive(false);
                 });
-
-                _audioSource.Play();
+                
+                //_audioSource.Play();
+                    
                 var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
                 firstDelay = 0;
                 foreach (var beats in beatmap)
@@ -100,6 +101,12 @@ namespace Group12
                         beats[i].beat += firstDelay;
                     }
                 }
+                
+                // DOVirtual.DelayedCall(firstDelay, () =>
+                // {
+                //     _audioSource.Play();
+                // },false);
+                _audioSource.Play();
 
                 lanes = beatmap.Select((beats, i) => new Lane(inputChannels[i], beats.Select(beat =>
                         new Note(
