@@ -101,11 +101,11 @@ namespace Group12
                     }
                 }
                 
-                // DOVirtual.DelayedCall(firstDelay, () =>
-                // {
-                //     _audioSource.Play();
-                // },false);
-                _audioSource.Play();
+                DOVirtual.DelayedCall(firstDelay, () =>
+                {
+                    _audioSource.Play();
+                },false);
+                //_audioSource.Play();
 
                 lanes = beatmap.Select((beats, i) => new Lane(i, inputChannels[i], beats.Select(beat =>
                         new Note(
