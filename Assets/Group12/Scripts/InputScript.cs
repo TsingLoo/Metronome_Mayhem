@@ -32,24 +32,24 @@ namespace Group12
 
         void Awake()
         {
-            mainInput = new MainInput();
-            mainInput.Enable();
+            // mainInput = new MainInput();
+            // mainInput.Enable();
+            //
+            // inputChannels = new InputAction[8]
+            // {
+            //     mainInput.inLevel.inputChannel0,
+            //     mainInput.inLevel.inputChannel1,
+            //     mainInput.inLevel.inputChannel2,
+            //     mainInput.inLevel.inputChannel3,
+            //     mainInput.inLevel.inputChannel4,
+            //     mainInput.inLevel.inputChannel5,
+            //     mainInput.inLevel.inputChannel6,
+            //     mainInput.inLevel.inputChannel7
+            // };
+            //
+            // channelIsHold = new bool[inputChannels.Length];
 
-            inputChannels = new InputAction[8]
-            {
-                mainInput.inLevel.inputChannel0,
-                mainInput.inLevel.inputChannel1,
-                mainInput.inLevel.inputChannel2,
-                mainInput.inLevel.inputChannel3,
-                mainInput.inLevel.inputChannel4,
-                mainInput.inLevel.inputChannel5,
-                mainInput.inLevel.inputChannel6,
-                mainInput.inLevel.inputChannel7
-            };
-
-            channelIsHold = new bool[inputChannels.Length];
-
-            bindInputAction(inputChannels);
+            //bindInputAction(inputChannels);
         }
 
         void Start()
