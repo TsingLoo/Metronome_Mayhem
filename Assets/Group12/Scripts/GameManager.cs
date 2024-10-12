@@ -17,6 +17,9 @@ namespace Group12
         private int combo;
         //add variables that keep track of the current score, combo, number of Good/Bad, etc\
 
+        [SerializeField] AudioSource _audioSource;
+
+        [SerializeField] TMP_Text readyCountDown_text;
         [SerializeField] TMP_Text timer_text;
         public static GameManager Instance { get; private set; }
         
@@ -24,6 +27,8 @@ namespace Group12
         Lane[] lanes;
 
         float _laneLength = 25f;
+
+        private float readyDelay = 4f;
         
         private MainInput _mainInput;
 
@@ -45,26 +50,64 @@ namespace Group12
                 _mainInput.inLevel.inputChannel6,
                 _mainInput.inLevel.inputChannel7,
             };   
+            
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+            }
         }
 
         private void Start()
         {
-            var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
-            lanes = beatmap.Select((beats, i) => new Lane(inputChannels[i], beats.Select(beat =>
-                new Note(
-                    GetComponent<NoteSpawner>().note,
-                    speed: beat.speed,
-                    pressMoment: beat.beat,
-                    releaseMoment: beat.beat + beat.hold,
-                    pressMomentPadding: 0.05f,
-                    excellentTolerance: 0.1f,
-                    goodTolerance: 0.15f,
-                    fairTolerance: 0.2f,
-                    missingTolerance: 0.3f,
-                    laneLength: _laneLength
-                )).ToArray(), transform.GetChild(i), _laneLength)
-            ).ToArray();
 
+            DOTween.To(() => readyDelay, x => readyDelay = x, 0f, readyDelay).OnUpdate(
+                () =>
+                {
+                    if (readyDelay - 1 < 0)
+                    {
+                        readyCountDown_text.text = "Go!";
+                    }
+                    else
+                    {
+                        readyCountDown_text.text = (readyDelay - 1).ToString("0.0");
+                    }
+                }
+            ).OnComplete(() =>
+            {
+                readyCountDown_text.transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
+                {
+                    readyCountDown_text.gameObject.SetActive(false);
+                });
+                
+                _audioSource.Play();
+                var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
+                lanes = beatmap.Select((beats, i) => new Lane(inputChannels[i], beats.Select(beat =>
+                        new Note(
+                            GetComponent<NoteSpawner>().note,
+                            speed: beat.speed,
+                            pressMoment: beat.beat,
+                            releaseMoment: beat.beat + beat.hold,
+                            pressMomentPadding: 0.05f,
+                            perfectTolerance: 0.03f,
+                            excellentTolerance: 0.05f,
+                            greatTolerance: 0.1f,
+                            okTolerance: 0.14f,
+                            missedTolerance: 0.3f,
+                            laneLength: _laneLength
+                        )).ToArray(), transform.GetChild(i), _laneLength)
+                ).ToArray();
+            });
+            
+                
+
+            
+
+            //_audioSource.Play();
+            
             // var firstLane = new Lane(
             //     inputChannels[0], // Use the first input channel
             //     beatmap[0].Select(beat => new Note(
@@ -83,22 +126,16 @@ namespace Group12
             // );
 
             //lanes = new[] { firstLane };
-            
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
-                Instance = this;
-            }
 
             combo = 0;
         }
 
         void Update()
         {
-            timer_text.text = $"{lanes[0]._laneTime}";
+            if (lanes != null && lanes.Length > 0)
+            {
+                timer_text.text = $"{lanes[0]._laneTime}";   
+            }
         }
 
         private void OnDestroy()
@@ -118,7 +155,7 @@ namespace Group12
             combo = 0;
         }
 
-        public void missedNote()
+        public void DoMissedNote()
         {
             // add a Miss, remove combo, decrease health
             missedNum++;
@@ -127,7 +164,7 @@ namespace Group12
 
         }
 
-        public void okNote()
+        public void DoOkNote()
         {
             // add an Ok, remove combo, decrease health
             okNum++;
@@ -136,7 +173,7 @@ namespace Group12
             //Debug.Log("Combo: " + combo);
         }
 
-        public void greatNote()
+        public void DoGreatNote()
         {
             // add a Great, remove combo, decrease health
             greatNum++;
@@ -145,7 +182,7 @@ namespace Group12
             //Debug.Log("Combo: " + combo);
         }
 
-        public void excellentNote()
+        public void DoExcellentNote()
         {
             // add an Excellent, decrease health, increase combo
             excellentNum++;
@@ -154,7 +191,7 @@ namespace Group12
             //Debug.Log("Combo: " + combo);
         }
 
-        public void perfectNote()
+        public void DoPerfectNote()
         {
             // add a Perfect, increase combo\
             perfectNum++;

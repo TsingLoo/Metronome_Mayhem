@@ -192,7 +192,7 @@ namespace Group12
                     float timing = note.hit(hold);
                     if (timing > 99)
                     {
-                        GameManager.Instance.perfectNote();
+                        GameManager.Instance.DoPerfectNote();
                         holdNoteTimer[lane] = holdNoteInputCheckCooldown;
                         return;
                     }
@@ -207,22 +207,22 @@ namespace Group12
                     if (timing > 0.09)
                     {
                         spawnSpark(okSparkPrefab, hitCollider.transform.position);
-                        GameManager.Instance.okNote();
+                        GameManager.Instance.DoOkNote();
                     }
                     else if (timing > 0.036f)
                     {
                         spawnSpark(greatSparkPrefab, hitCollider.transform.position);
-                        GameManager.Instance.greatNote();
+                        GameManager.Instance.DoGreatNote();
                     }
                     else if (timing > 0.012f)
                     {
                         spawnSpark(excellentSparkPrefab, hitCollider.transform.position);
-                        GameManager.Instance.excellentNote();
+                        GameManager.Instance.DoExcellentNote();
                     }
                     else
                     {
                         spawnSpark(perfectSparkPrefab, hitCollider.transform.position);
-                        GameManager.Instance.perfectNote();
+                        GameManager.Instance.DoPerfectNote();
                     }
 
                     holdNoteTimer[lane] = holdNoteInputCheckCooldown / 2;
@@ -232,7 +232,7 @@ namespace Group12
 
         void OnTriggerEnter(Collider c)
         {
-            GameManager.Instance.missedNote();
+            GameManager.Instance.DoMissedNote();
             //Debug.Log("here");
             Destroy(c.gameObject, 2);
         }

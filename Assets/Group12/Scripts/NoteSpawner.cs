@@ -36,13 +36,13 @@ namespace Group12
         {
             started = true;
             dsptimesong = (float)AudioSettings.dspTime;
-            AS.Play();
+            //AS.Play();
         }
 
         public void endLevel()
         {
             ended = true;
-            AS.Stop();
+            //AS.Stop();
             // ...
         }
 

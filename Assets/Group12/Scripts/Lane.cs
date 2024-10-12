@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -17,10 +16,11 @@ namespace Group12
 
     public enum timingGrade
     {
+        Perfect,
         Excellent,
-        Good,
-        Fair,
-        Missing,
+        Great,
+        Ok,
+        Missed,
         Undefined
     }
     
@@ -52,12 +52,7 @@ namespace Group12
 
 
         #region Timing Definitions
-
-        public float velocity
-        {
-            get { return _laneLength / (pressFloor - spawnMoment); }
-        }
-
+        
         float fullLength
         {
             get { return _laneLength + _lengthPadding; }
@@ -73,83 +68,44 @@ namespace Group12
             get { return curNote.spawnMoment; }
         }
 
-        float pressFloor
-        {
-            get { return curNote.pressMoment - curNote.pressMomentPadding; }
-        }
-
-        float pressCeil
-        {
-            get { return curNote.pressMoment + curNote.pressMomentPadding; }
-        }
-
-        float excellentFloor
-        {
-            get { return pressFloor - curNote.excellentTolerance; }
-        }
-
-        float excellentCeil
-        {
-            get { return pressCeil + curNote.excellentTolerance; }
-        }
-
-        float goodFloor
-        {
-            get { return excellentFloor - curNote.goodTolerance; }
-        }
-
-        float goodCeil
-        {
-            get { return excellentCeil + curNote.excellentTolerance; }
-        }
-
-        float fairFloor
-        {
-            get { return goodFloor - curNote.fairTolerance; }
-        }
-
-        float fairCeil
-        {
-            get { return goodCeil + curNote.fairTolerance; }
-        }
-
-        float missingFloor
-        {
-            get { return fairFloor - curNote.missingTolerance; }
-        }
-
-        float missingCeiling
-        {
-            get { return fairCeil + curNote.missingTolerance; }
-        }
-
         #endregion
 
         timingGrade GetTimingGrade(float inputTime, float refernceTime)
         {
-            if (Math.Abs(inputTime - refernceTime) < curNote.excellentTolerance)
+            if (Math.Abs(inputTime - refernceTime) < curNote.perfectTolerance)
+            {
+                Debug.Log(
+                    $"[{nameof(HandleRelease)}][KeyReleased: Perfect Action  on {curNote.GetHashCode()}!!!!");
+                GameManager.Instance.DoPerfectNote();
+                return  timingGrade.Excellent;
+            }
+            else if (Math.Abs(inputTime - refernceTime) < curNote.excellentTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Excellent Action  on {curNote.GetHashCode()}!!!!");
+                GameManager.Instance.DoExcellentNote();
                 return  timingGrade.Excellent;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.goodTolerance)
+            else if (Math.Abs(inputTime - refernceTime) < curNote.greatTolerance)
             {
                 Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: Good Action on {curNote.GetHashCode()}!!!!");
-                return  timingGrade.Good;
+                    $"[{nameof(HandleRelease)}][KeyReleased: Great Action on {curNote.GetHashCode()}!!!!");
+                GameManager.Instance.DoGreatNote();
+                return  timingGrade.Great;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.fairTolerance)
+            else if (Math.Abs(inputTime - refernceTime) < curNote.okTolerance)
             {
                 Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: Fair Action on {curNote.GetHashCode()}!!!!");
-                return  timingGrade.Fair;
+                    $"[{nameof(HandleRelease)}][KeyReleased: Ok Action on {curNote.GetHashCode()}!!!!");
+                GameManager.Instance.DoOkNote();
+                return  timingGrade.Ok;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.missingTolerance)
+            else if (Math.Abs(inputTime - refernceTime) < curNote.missedTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Miss Action on {curNote.GetHashCode()}!!!!");
-                return  timingGrade.Missing;
+                GameManager.Instance.DoMissedNote();
+                return  timingGrade.Missed;
             }
             
             return timingGrade.Undefined; 
@@ -192,13 +148,9 @@ namespace Group12
             float actionInGameTime = _laneTime;
 
             Debug.Log(
-                $"[{nameof(HandlePress)}]  {context.action.name} Pressed {curNote.GetHashCode()} at {actionInGameTime} : {curNote.pressMoment} " +
-                $"missingFloor: {missingFloor}, missingCeiling: {missingCeiling}, " +
-                $"excellentFloor: {excellentFloor}, excellentCeiling: {excellentCeil} " +
-                $"goodFloor: {goodFloor}, goodCeiling: {goodCeil}" +
-                $"fairFloor: {fairFloor}, fairCeiling: {fairCeil}");
+                $"[{nameof(HandlePress)}]  {context.action.name} Pressed {curNote.GetHashCode()} at {actionInGameTime} : {curNote.pressMoment} ");
 
-            if (actionInGameTime < curNote.pressMoment - curNote.missingTolerance)
+            if (actionInGameTime < curNote.pressMoment - curNote.missedTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}] Do Nothing ... on {curNote.GetHashCode()}");
@@ -255,11 +207,15 @@ namespace Group12
                 foreach (var note in _notes)
                 {
                     float delay = note.spawnMoment;
+                    
+                    
                     //float delay = note.spawnMoment - Time.time;
                     Debug.Log(
                         $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name}{note.GetHashCode()} RealTime .s tims is BEFORE IS   {Time.realtimeSinceStartup}");
                     Debug.Log(
                         $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name}{note.GetHashCode()} Time.time BEFORE IS   {Time.time}");
+                    
+                    
                     DOVirtual.DelayedCall(delay, () =>
                     {
                         _timingOffset = delay - (Time.time - initTime);
@@ -307,7 +263,7 @@ namespace Group12
             //float progress = 0f;
 
 
-            DOVirtual.DelayedCall(note.missingCeiling + initTime - Time.time, () => { HandleTimeout(note); }, false)
+            DOVirtual.DelayedCall(note.pressMoment + note.missedTolerance + initTime - Time.time, () => { HandleTimeout(note); }, false)
                 .SetId(note.GetHashCode());
 
             // DOTween.To(() => progress, x => progress = x, 1f,   note.missingCeiling + initTime - Time.time)
@@ -324,12 +280,12 @@ namespace Group12
             float time = _laneTime;
             float releaseTime = curNote.releaseMoment;
             
-            Debug.Log(
-                $"[{nameof(HandleRelease)}]  {context.action.name} Pressed {curNote.GetHashCode()} at {time} : {curNote.pressMoment}, {curNote.releaseMoment} " +
-                $"missingFloor: {missingFloor}, missingCeiling: {missingCeiling}, " +
-                $"excellentFloor: {excellentFloor}, excellentCeiling: {excellentCeil} " +
-                $"goodFloor: {goodFloor}, goodCeiling: {goodCeil}" +
-                $"fairFloor: {fairFloor}, fairCeiling: {fairCeil}");
+            // Debug.Log(
+            //     $"[{nameof(HandleRelease)}]  {context.action.name} Pressed {curNote.GetHashCode()} at {time} : {curNote.pressMoment}, {curNote.releaseMoment} " +
+            //     $"missingFloor: {missingFloor}, missingCeiling: {missingCeiling}, " +
+            //     $"excellentFloor: {excellentFloor}, excellentCeiling: {excellentCeil} " +
+            //     $"goodFloor: {goodFloor}, goodCeiling: {goodCeil}" +
+            //     $"fairFloor: {fairFloor}, fairCeiling: {fairCeil}");
 
             // avoid multi next within one beat
             
@@ -376,8 +332,8 @@ namespace Group12
 
         void HandleTimeout(Note note)
         {
-            Debug.Log(
-                $"[{nameof(HandleTimeout)}] {nameof(missingCeiling)} of {note.GetHashCode()} is {missingCeiling} Timeout ... At {_laneTime}");
+            GameManager.Instance.DoMissedNote();
+            //Debug.Log($"[{nameof(HandleTimeout)}] {nameof()} of {note.GetHashCode()} is {missingCeiling} Timeout ... At {_laneTime}");
             NextNote();
         }
 
@@ -438,124 +394,4 @@ namespace Group12
             //     );
         }
     }
-
-    public class Note
-    {
-        public GameObject gameObject { get; }
-
-        private float score;
-        private float scoreScale;
-
-        public float speed { get; }
-        public float spawnMoment { get; }
-        public float pressMoment { get; }
-        //public float releaseMoment { get;}
-
-        public float releaseMoment = -1f;
-
-        public bool IsHoldNote
-        {
-            get { return releaseMoment != pressMoment; }
-        }
-
-        public float pressMomentPadding { get; }
-
-        // excellent time period for press: [pressMoment - excellentTolerance, pressMoment + excellentTolerance]
-        public float excellentTolerance { get; }
-
-        // good time period for press: [pressMoment - goodTolerance, pressMoment + goodTolerance]
-        public float goodTolerance { get; }
-
-        // fair time period for press: [pressMoment - fairTolerance, pressMoment + fairTolerance]
-        public float fairTolerance { get; }
-        public float missingTolerance { get; }
-
-
-        private UnityAction<float> onPress;
-        UnityAction<float> onRelease;
-
-        public Note(GameObject obj, float speed, float pressMoment, float releaseMoment, float pressMomentPadding,
-            float excellentTolerance, float goodTolerance, float fairTolerance,
-            float missingTolerance, float laneLength)
-        {
-            this.gameObject = obj;
-            this.speed = speed;
-            this.pressMoment = pressMoment;
-            this.releaseMoment = releaseMoment;
-            this.pressMomentPadding = pressMomentPadding;
-            this.excellentTolerance = excellentTolerance;
-            this.goodTolerance = goodTolerance;
-            this.fairTolerance = fairTolerance;
-            this.missingTolerance = missingTolerance;
-
-            this.spawnMoment = this.pressMoment - laneLength / speed;
-        }
-
-        public float pressFloor
-        {
-            get { return pressMoment - pressMomentPadding; }
-        }
-
-        public float pressCeil
-        {
-            get { return pressMoment + pressMomentPadding; }
-        }
-
-        public float excellentFloor
-        {
-            get { return pressFloor - excellentTolerance; }
-        }
-
-        public float excellentCeil
-        {
-            get { return pressCeil + excellentTolerance; }
-        }
-
-        public float goodFloor
-        {
-            get { return excellentFloor - goodTolerance; }
-        }
-
-        public float goodCeil
-        {
-            get { return excellentCeil + excellentTolerance; }
-        }
-
-        public float fairFloor
-        {
-            get { return goodFloor - fairTolerance; }
-        }
-
-        public float fairCeil
-        {
-            get { return goodCeil + fairTolerance; }
-        }
-
-        public float missingFloor
-        {
-            get { return fairFloor - missingTolerance; }
-        }
-
-        public float missingCeiling
-        {
-            get { return fairCeil + missingTolerance; }
-        }
-
-        public override string ToString()
-        {
-            return $"[{nameof(Note)}] {this.GetHashCode()} pressMoment:{pressMoment}";
-        }
-    }
-
-
-    // public class TapNote : Note
-    // {
-    //     
-    // }
-    //
-    // public class HoldNote : Note
-    // {
-    //     private float releaseMoment;
-    //     
-    // }
 }
