@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Object = UnityEngine.Object;
 
@@ -14,6 +13,7 @@ namespace Group12
     //     private float time;
     // }
 
+    
     public enum timingGrade
     {
         Perfect,
@@ -26,6 +26,8 @@ namespace Group12
 
     public class Lane
     {
+        public int LaneIdx;
+
         private float initTime;
 
         Transform _spawnTransform;
@@ -49,27 +51,8 @@ namespace Group12
         private float _score;
         private float _currentProgress;
         private InputAction _actionChannel;
-
-
-        #region Timing Definitions
-
-        float fullLength
-        {
-            get { return _laneLength + _lengthPadding; }
-        }
-
-        float pressMoment
-        {
-            get { return curNote.pressMoment; }
-        }
-
-        float spawnMoment
-        {
-            get { return curNote.spawnMoment; }
-        }
-
-        #endregion
-
+        
+        
         timingGrade GetTimingGrade(float inputTime, float refernceTime)
         {
             if (Math.Abs(inputTime - refernceTime) < curNote.perfectTolerance)
@@ -104,7 +87,7 @@ namespace Group12
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Miss Action on {curNote.GetHashCode()}!!!!");
-                GameManager.Instance.DoMissedNote();
+                GameManager.Instance.DoMissedNote(LaneIdx);
                 return timingGrade.Missed;
             }
 
@@ -116,9 +99,11 @@ namespace Group12
             get { return _notes[_currentNoteIdx]; }
         }
 
-        public Lane(InputAction actionChannel, Note[] notes, Transform spawnTransform, float laneLength,
+        public Lane(int laneIdx, InputAction actionChannel, Note[] notes, Transform spawnTransform, float laneLength,
             float visualOffset = 0f, int noteStartIdx = 0)
         {
+            LaneIdx = laneIdx;
+            
             _actionChannel = actionChannel;
             _notes = notes;
 
@@ -154,14 +139,15 @@ namespace Group12
             {
                 Debug.Log(
                     $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}] Do Nothing ... on {curNote.GetHashCode()}");
+                FxManager.Instance.PlayActionFx(LaneIdx);
                 return;
             }
-
+            
             Debug.Log($"[{nameof(NextNote)}] Trying to kill the timeout of {_notes[_currentNoteIdx].GetHashCode()}");
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
 
-            GetTimingGrade(actionInGameTime, curNote.pressMoment);
-
+            var grade =  GetTimingGrade(actionInGameTime, curNote.pressMoment);
+            FxManager.Instance.PlayActionFx(LaneIdx,grade);
             // if (excellentFloor < actionInGameTime && actionInGameTime < excellentCeil)
             // {
             //     Debug.Log(
@@ -296,13 +282,15 @@ namespace Group12
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: {context.action.name}] Do Nothing ... on {curNote.GetHashCode()}");
+                FxManager.Instance.PlayActionFx(LaneIdx);
                 return;
             }
 
             Debug.Log($"[{nameof(NextNote)}] Trying to kill the timeout of {_notes[_currentNoteIdx].GetHashCode()}");
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
 
-            GetTimingGrade(time, releaseTime);
+            var grade = GetTimingGrade(time, releaseTime);
+            FxManager.Instance.PlayActionFx(LaneIdx,grade);
 
             // if (Math.Abs(time - releaseTime) < curNote.excellentTolerance)
             // {
@@ -334,7 +322,7 @@ namespace Group12
 
         void HandleTimeout(Note note)
         {
-            GameManager.Instance.DoMissedNote();
+            GameManager.Instance.DoMissedNote(LaneIdx);
             //Debug.Log($"[{nameof(HandleTimeout)}] {nameof()} of {note.GetHashCode()} is {missingCeiling} Timeout ... At {_laneTime}");
             NextNote();
         }

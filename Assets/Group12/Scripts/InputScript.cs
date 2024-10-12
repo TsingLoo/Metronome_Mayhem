@@ -232,7 +232,7 @@ namespace Group12
 
         void OnTriggerEnter(Collider c)
         {
-            GameManager.Instance.DoMissedNote();
+            //GameManager.Instance.DoMissedNote();
             //Debug.Log("here");
             Destroy(c.gameObject, 2);
         }

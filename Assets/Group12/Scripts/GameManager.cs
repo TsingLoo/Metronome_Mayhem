@@ -6,7 +6,6 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Group12
 {
@@ -108,7 +107,7 @@ namespace Group12
                 // },false);
                 _audioSource.Play();
 
-                lanes = beatmap.Select((beats, i) => new Lane(inputChannels[i], beats.Select(beat =>
+                lanes = beatmap.Select((beats, i) => new Lane(i, inputChannels[i], beats.Select(beat =>
                         new Note(
                             GetComponent<NoteSpawner>().note,
                             speed: beat.speed,
@@ -174,8 +173,9 @@ namespace Group12
             combo = 0;
         }
 
-        public void DoMissedNote()
+        public void DoMissedNote(int sourceIdx)
         {
+            FxManager.Instance.PlayActionFx(sourceIdx,timingGrade.Missed);
             // add a Miss, remove combo, decrease health
             missedNum++;
             MyHealth.ChangeHealth(-5);
