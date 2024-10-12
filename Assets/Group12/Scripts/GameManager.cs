@@ -56,11 +56,11 @@ namespace Group12
                     speed: beat.speed,
                     pressMoment: beat.beat,
                     releaseMoment: beat.beat + beat.hold,
-                    pressMomentPadding: 0.03f,
-                    excellentTolerance: 0.05f,
-                    goodTolerance: 0.05f,
-                    fairTolerance: 0.05f,
-                    missingTolerance: 0.2f,
+                    pressMomentPadding: 0.05f,
+                    excellentTolerance: 0.1f,
+                    goodTolerance: 0.15f,
+                    fairTolerance: 0.2f,
+                    missingTolerance: 0.3f,
                     laneLength: _laneLength
                 )).ToArray(), transform.GetChild(i), _laneLength)
             ).ToArray();

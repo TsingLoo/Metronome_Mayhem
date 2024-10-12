@@ -130,25 +130,25 @@ namespace Group12
             if (Math.Abs(inputTime - refernceTime) < curNote.excellentTolerance)
             {
                 Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: Excellent Press  on {curNote.GetHashCode()}!!!!");
+                    $"[{nameof(HandleRelease)}][KeyReleased: Excellent Action  on {curNote.GetHashCode()}!!!!");
                 return  timingGrade.Excellent;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.goodTolerance)
             {
                 Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: Good Press on {curNote.GetHashCode()}!!!!");
+                    $"[{nameof(HandleRelease)}][KeyReleased: Good Action on {curNote.GetHashCode()}!!!!");
                 return  timingGrade.Good;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.fairTolerance)
             {
                 Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: Fair Press on {curNote.GetHashCode()}!!!!");
+                    $"[{nameof(HandleRelease)}][KeyReleased: Fair Action on {curNote.GetHashCode()}!!!!");
                 return  timingGrade.Fair;
             }
             else if (Math.Abs(inputTime - refernceTime) < curNote.missingTolerance)
             {
                 Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: Miss Press on {curNote.GetHashCode()}!!!!");
+                    $"[{nameof(HandleRelease)}][KeyReleased: Miss Action on {curNote.GetHashCode()}!!!!");
                 return  timingGrade.Missing;
             }
             
@@ -198,13 +198,12 @@ namespace Group12
                 $"goodFloor: {goodFloor}, goodCeiling: {goodCeil}" +
                 $"fairFloor: {fairFloor}, fairCeiling: {fairCeil}");
 
-            if (actionInGameTime < curNote.pressMoment - curNote.excellentTolerance)
+            if (actionInGameTime < curNote.pressMoment - curNote.missingTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}] Do Nothing ... on {curNote.GetHashCode()}");
                 return;
             }
-
 
             Debug.Log($"[{nameof(NextNote)}] Trying to kill the timeout of {_notes[_currentNoteIdx].GetHashCode()}");
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
@@ -282,7 +281,7 @@ namespace Group12
                 $"[{nameof(SpawnNote)}] Spawning Note {note.GetHashCode()} at time: {Time.time}, it is supposed to {note.spawnMoment}, the offset is {_timingOffset}");
             var go = Object.Instantiate(note.gameObject as GameObject, _spawnTransform);
             go.name = $"{note.GetHashCode()}";
-            float noteLength = (note.releaseMoment - note.pressMoment + 2 * note.excellentTolerance) * note.speed;
+            float noteLength = Math.Max(note.excellentTolerance, note.releaseMoment - note.pressMoment) * note.speed;
             //float noteLength = (note.releaseMoment - note.pressMoment ) * note.speed;
             go.transform.localScale = new Vector3(1.5f, 0.4f, noteLength);
             go.transform.position = _spawnTransform.position + new Vector3(0, 0, noteLength / 2);
