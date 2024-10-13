@@ -152,7 +152,7 @@ namespace Group12
         {
             if (lanes != null && lanes.Length > 0)
             {
-                timer_text.text = $"{lanes[0]._laneTime}";
+                timer_text.text = $"Time from song starts: {lanes[0]._laneTime - firstDelay}";
             }
         }
 
