@@ -104,7 +104,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b6c10ed0-93c1-4af4-8a62-b76b60975527"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""PC-Keyboard"",
@@ -115,7 +115,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3d54f881-37f0-4f39-bbbf-44098a75911e"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""PC-Keyboard"",
@@ -126,7 +126,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9ad5d0d6-5abe-4759-91ef-9b8a9ec7d014"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""PC-Keyboard"",
@@ -137,7 +137,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""62d718ea-a244-4436-ae48-0714822a4102"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""PC-Keyboard"",
