@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,25 @@ public class Laser : MonoBehaviour
     private LineRenderer lineRenderer;
     public KeyCode keycode;
     [SerializeField] private ParticleSystem particle;
-    
-    
-    
+    private List <ParticleSystem> particleSystems = new List<ParticleSystem>();
+
+
     // Start is called before the first frame update
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
         lineRenderer.useWorldSpace = true;
-
-        particle.gameObject.SetActive(false);
+        particleSystems.AddRange(particle.GetComponentsInChildren<ParticleSystem>(true));
+        
+        var emission = particle.emission;
+        emission.enabled = false;
+        //Debug.Log(particleSystems.Count);
+        foreach (var system in particleSystems)
+        {
+            emission = system.emission;
+            emission.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -33,13 +42,25 @@ public class Laser : MonoBehaviour
             if(Input.GetKey(keycode))
             {
                 lineRenderer.enabled = true;
-                particle.gameObject.SetActive(true);
+                var emission = particle.emission;
+                emission.enabled = true;
+                foreach (var system in particleSystems)
+                {
+                    emission = system.emission;
+                    emission.enabled = true;
+                }
                 
             }
             else
             {
                 lineRenderer.enabled = false;
-                particle.gameObject.SetActive(false);
+                var emission = particle.emission;
+                emission.enabled = false;
+                foreach (var system in particleSystems)
+                {
+                    emission = system.emission;
+                    emission.enabled = false;
+                }
             }
         }
     }
