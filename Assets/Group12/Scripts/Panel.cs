@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -38,7 +39,6 @@ namespace Group12
             {
                 GameManager.Instance.ResetGame();
                 // restart the game
-                Time.timeScale = 1;
                 Hide();
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             });
@@ -47,6 +47,8 @@ namespace Group12
         // show panel
         public void Show(PanelStatus status)
         {
+            Time.timeScale = 0;
+            DOTween.timeScale = 0;
             gameObject.SetActive(true);
             switch (status)
             {
@@ -65,6 +67,8 @@ namespace Group12
         // hide panel
         public void Hide()
         {
+            Time.timeScale = 1;
+            DOTween.timeScale = 1;
             gameObject.SetActive(false);
         }
     }

@@ -33,7 +33,7 @@ namespace Group12
         public Transform _spawnTransform;
         int _currentNoteIdx = -1;
 
-        float _timingOffset;
+        float _timingOffset = 0.0f;
 
 
         public float _laneTime
@@ -172,6 +172,7 @@ namespace Group12
 
                 foreach (var note in _notes)
                 {
+                    
                     float delay = note.spawnMoment;
 
                     //float delay = note.spawnMoment - Time.time;

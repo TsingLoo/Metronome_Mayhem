@@ -13,6 +13,8 @@ namespace Group12
         private float scoreScale;
 
         public float speed { get; }
+        
+        //Time of the spawning of the Note, which is calculated from the spawnMovement and speed
         public float spawnMoment { get; }
         public float pressMoment { get; }
         //public float releaseMoment { get;}

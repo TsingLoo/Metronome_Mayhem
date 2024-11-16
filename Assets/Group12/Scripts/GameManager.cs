@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace Group12
 {
@@ -30,7 +30,7 @@ namespace Group12
         float _laneLength = 25f;
 
         private float readyDelay = 4f;
-        public float firstDelay;
+        public float firstDelay = 0f;
 
         private MainInput _mainInput;
 
@@ -55,7 +55,7 @@ namespace Group12
             
             _mainInput.inLevel.showPanel.performed += ctx =>
             {
-                Debug.Log(Panel.Instance.isActiveAndEnabled);
+                //Debug.Log(Panel.Instance.isActiveAndEnabled);
                 if (Panel.Instance.isActiveAndEnabled)
                 {
                     Panel.Instance.Hide();
@@ -87,12 +87,18 @@ namespace Group12
 
         public void ResetGame()
         {
-            StartSong();
+            // RemoveAllCubes();
+            // StartSong();
+            RemoveAllCubes();
+            DOTween.KillAll();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void StartSong()
         {
-            DOTween.KillAll();
+            readyDelay = 4.0f;
+            //DOTween.RestartAll();
+
             DOTween.To(() => readyDelay, x => readyDelay = x, 0f, readyDelay).OnUpdate(
                 () =>
                 {
@@ -107,6 +113,7 @@ namespace Group12
                 }
             ).OnComplete(() =>
             {
+                
                 combo = 0;
                 readyCountDown_text.transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
                 {
@@ -115,7 +122,9 @@ namespace Group12
                     
                 var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
                 var lastBeatTime = 0.0f;
-                firstDelay = 0;
+                //firstDelay = 0;
+                
+                
                 foreach (var beats in beatmap)
                 {
                     Array.Sort(beats, (a, b) => a.beat - b.beat > 0 ? 1 : -1);
@@ -158,6 +167,7 @@ namespace Group12
                             laneLength: _laneLength
                         )).ToArray(), transform.GetChild(i), _laneLength)
                 ).ToArray();
+                
             });
         }
 
@@ -234,8 +244,13 @@ namespace Group12
         public void RemoveAllCubes()
         {
             foreach (var lane in lanes)
-            { 
-
+            {
+                if(lane == null) return;
+                Transform spawnTransform = lane._spawnTransform;
+                for (int i = spawnTransform.childCount - 1; i >= 0; i--)
+                {
+                    Destroy(spawnTransform.GetChild(i).gameObject);
+                }
             }
         }
     }

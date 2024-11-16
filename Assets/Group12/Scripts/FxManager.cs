@@ -39,7 +39,7 @@ namespace  Group12
                 return;
             }
 
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             Instance = this;
         }
 
