@@ -243,6 +243,7 @@ namespace Group12
 
         public void RemoveAllCubes()
         {
+            if(lanes == null) return;
             foreach (var lane in lanes)
             {
                 if(lane == null) return;
