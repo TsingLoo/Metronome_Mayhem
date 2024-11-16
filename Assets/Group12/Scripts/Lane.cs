@@ -187,10 +187,10 @@ namespace Group12
                         _timingOffset = delay - (Time.time - initTime);
 
                         SpawnNote(note);
-                        Debug.Log(
-                            $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name} spawns {note.GetHashCode()} delay is {delay}");
-                        Debug.Log(
-                            $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name} spawns {note.GetHashCode()} Time.time is  {Time.time}, LaneTime: {_laneTime}");
+                        // Debug.Log(
+                        //     $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name} spawns {note.GetHashCode()} delay is {delay}");
+                        // Debug.Log(
+                        //     $"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name} spawns {note.GetHashCode()} Time.time is  {Time.time}, LaneTime: {_laneTime}");
                     }, false);
                     //.OnComplete( ()=>Debug.Log($"[{nameof(ScheduleNoteSpawning)}]{_actionChannel.name}{note.GetHashCode()} Time On Compelete {Time.realtimeSinceStartup}"));
                 }
@@ -199,8 +199,8 @@ namespace Group12
 
         void SpawnNote(Note note)
         {
-            Debug.Log(
-                $"[{nameof(SpawnNote)}] Spawning Note {note.GetHashCode()} at time: {Time.time}, it is supposed to {note.spawnMoment}, the offset is {_timingOffset}");
+            // Debug.Log(
+            //     $"[{nameof(SpawnNote)}] Spawning Note {note.GetHashCode()} at time: {Time.time}, it is supposed to {note.spawnMoment}, the offset is {_timingOffset}");
             var go = Object.Instantiate(note.gameObject as GameObject, _spawnTransform);
             go.name = $"{note.GetHashCode()}";
             float noteLength = Math.Max(note.excellentTolerance, note.releaseMoment - note.pressMoment) * note.speed;
@@ -210,8 +210,8 @@ namespace Group12
 
             float fullMoveLength = _laneLength + _lengthPadding;
 
-            Debug.Log(
-                $"[Arrive] {note.GetHashCode()} Suppose to arrive at {_laneLength / note.speed + note.spawnMoment}, lanelength is {_laneLength}, note.speed is {note.speed}, note.spwanMoment is {note.spawnMoment}");
+            // Debug.Log(
+            //     $"[Arrive] {note.GetHashCode()} Suppose to arrive at {_laneLength / note.speed + note.spawnMoment}, lanelength is {_laneLength}, note.speed is {note.speed}, note.spwanMoment is {note.spawnMoment}");
 
             //float velocity = _length / (note.pressMoment - note.spawnMoment + _visualOffset);
 
@@ -261,13 +261,13 @@ namespace Group12
             //if (actionInGameTime < curNote.pressMoment - curNote.excellentTolerance)
             if (time < curNote.pressMoment - curNote.excellentTolerance)
             {
-                Debug.Log(
-                    $"[{nameof(HandleRelease)}][KeyReleased: {context.action.name}] Do Nothing ... on {curNote.GetHashCode()}");
+                // Debug.Log(
+                //     $"[{nameof(HandleRelease)}][KeyReleased: {context.action.name}] Do Nothing ... on {curNote.GetHashCode()}");
                 FxManager.Instance.PlayActionFx(LaneIdx);
                 return;
             }
 
-            Debug.Log($"[{nameof(NextNote)}] Trying to kill the timeout of {_notes[_currentNoteIdx].GetHashCode()}");
+            //Debug.Log($"[{nameof(NextNote)}] Trying to kill the timeout of {_notes[_currentNoteIdx].GetHashCode()}");
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
 
             var grade = GetTimingGrade(time, releaseTime);
@@ -294,8 +294,8 @@ namespace Group12
             //         $"[{nameof(HandleRelease)}][KeyReleased: {context.action.name}]  Miss Press on {curNote.GetHashCode()}!!!!");
             // }
 
-            Debug.Log(
-                $"[{nameof(HandleRelease)}][KeyReleased: {{context.action.name}}] Press {curNote.GetHashCode()}, Try to go to Next Note ...!!!!");
+            // Debug.Log(
+            //     $"[{nameof(HandleRelease)}][KeyReleased: {{context.action.name}}] Press {curNote.GetHashCode()}, Try to go to Next Note ...!!!!");
 
             HandleHoldEnd();
             NextNote();
@@ -341,8 +341,8 @@ namespace Group12
                 _currentNoteIdx += 1;
             }
 
-            Debug.Log(
-                $"[{nameof(NextNote)}] {_actionChannel.name} Cur Note is set to {_currentNoteIdx} {_notes[_currentNoteIdx]}");
+            // Debug.Log(
+            //     $"[{nameof(NextNote)}] {_actionChannel.name} Cur Note is set to {_currentNoteIdx} {_notes[_currentNoteIdx]}");
 
             // if (_currentNoteIdx - 1 >= 0)
             // {
