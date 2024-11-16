@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -51,6 +52,23 @@ namespace Group12
                 _mainInput.inLevel.inputChannel6,
                 _mainInput.inLevel.inputChannel7,
             };
+            
+            _mainInput.inLevel.showPanel.performed += ctx =>
+            {
+                Debug.Log(Panel.Instance.isActiveAndEnabled);
+                if (Panel.Instance.isActiveAndEnabled)
+                {
+                    Panel.Instance.Hide();
+                    Time.timeScale = 1.0f;
+                    DOTween.timeScale = 1.0f;
+                }
+                else
+                {
+                    Panel.Instance.Show(PanelStatus.PAUSE);
+                    Time.timeScale = 0.0f;
+                    DOTween.timeScale = 0.0f;
+                }
+            };
 
             if (Instance != null && Instance != this)
             {
@@ -64,6 +82,17 @@ namespace Group12
 
         private void Start()
         {
+            StartSong();
+        }
+
+        public void ResetGame()
+        {
+            StartSong();
+        }
+
+        public void StartSong()
+        {
+            DOTween.KillAll();
             DOTween.To(() => readyDelay, x => readyDelay = x, 0f, readyDelay).OnUpdate(
                 () =>
                 {
@@ -78,19 +107,20 @@ namespace Group12
                 }
             ).OnComplete(() =>
             {
+                combo = 0;
                 readyCountDown_text.transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
                 {
                     readyCountDown_text.gameObject.SetActive(false);
                 });
-                
-                //_audioSource.Play();
                     
                 var beatmap = BeatmapLoader.load(Constants.BeatmapNames.Excelsus);
+                var lastBeatTime = 0.0f;
                 firstDelay = 0;
                 foreach (var beats in beatmap)
                 {
                     Array.Sort(beats, (a, b) => a.beat - b.beat > 0 ? 1 : -1);
                     firstDelay = Math.Max(firstDelay, _laneLength / beats[0].speed - beats[0].beat);
+                    lastBeatTime = Math.Max(lastBeatTime, beats[beats.Length - 1].beat + beats[beats.Length - 1].hold);
                 }
 
                 foreach (var beats in beatmap)
@@ -105,7 +135,13 @@ namespace Group12
                 {
                     _audioSource.Play();
                 },false);
-                //_audioSource.Play();
+                DOVirtual.DelayedCall(firstDelay + lastBeatTime, () =>
+                {
+                    // call the panel to show the win panel
+                    Panel.Instance.Show(PanelStatus.WIN);
+                    // stop the game
+                    Time.timeScale = 0;
+                },false);
 
                 lanes = beatmap.Select((beats, i) => new Lane(i, inputChannels[i], beats.Select(beat =>
                         new Note(
@@ -123,29 +159,6 @@ namespace Group12
                         )).ToArray(), transform.GetChild(i), _laneLength)
                 ).ToArray();
             });
-
-            //_audioSource.Play();
-
-            // var firstLane = new Lane(
-            //     inputChannels[0], // Use the first input channel
-            //     beatmap[0].Select(beat => new Note(
-            //         GetComponent<NoteSpawner>().note,
-            //         speed: beat.speed,
-            //         pressMoment: beat.beat,
-            //         releaseMoment: -1,
-            //         //releaseMoment: beat.hold == 0 ? -1: beat.beat + beat.hold,
-            //         pressMomentPadding: 0.15f,
-            //         excellentTolerance: 0.05f,
-            //         goodTolerance: 0.12f,
-            //         fairTolerance: 0.25f,
-            //         missingTolerance: 0.6f
-            //     )).ToArray(),
-            //     transform.GetChild(0) // Use the first child
-            // );
-
-            //lanes = new[] { firstLane };
-
-            combo = 0;
         }
 
         void Update()
@@ -216,6 +229,14 @@ namespace Group12
             MyHealth.ChangeHealth(5);
             combo++;
             //Debug.Log("Combo: " + combo);
+        }
+
+        public void RemoveAllCubes()
+        {
+            foreach (var lane in lanes)
+            { 
+
+            }
         }
     }
 }

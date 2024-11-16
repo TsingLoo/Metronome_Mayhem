@@ -30,7 +30,7 @@ namespace Group12
 
         private float initTime;
 
-        Transform _spawnTransform;
+        public Transform _spawnTransform;
         int _currentNoteIdx = -1;
 
         float _timingOffset;
@@ -53,37 +53,37 @@ namespace Group12
         private InputAction _actionChannel;
         
         
-        timingGrade GetTimingGrade(float inputTime, float refernceTime)
+        timingGrade GetTimingGrade(float inputTime, float referenceTime)
         {
-            if (Math.Abs(inputTime - refernceTime) < curNote.perfectTolerance)
+            if (Math.Abs(inputTime - referenceTime) < curNote.perfectTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Perfect Action  on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoPerfectNote();
                 return timingGrade.Excellent;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.excellentTolerance)
+            else if (Math.Abs(inputTime - referenceTime) < curNote.excellentTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Excellent Action  on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoExcellentNote();
                 return timingGrade.Excellent;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.greatTolerance)
+            else if (Math.Abs(inputTime - referenceTime) < curNote.greatTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Great Action on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoGreatNote();
                 return timingGrade.Great;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.okTolerance)
+            else if (Math.Abs(inputTime - referenceTime) < curNote.okTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Ok Action on {curNote.GetHashCode()}!!!!");
                 GameManager.Instance.DoOkNote();
                 return timingGrade.Ok;
             }
-            else if (Math.Abs(inputTime - refernceTime) < curNote.missedTolerance)
+            else if (Math.Abs(inputTime - referenceTime) < curNote.missedTolerance)
             {
                 Debug.Log(
                     $"[{nameof(HandleRelease)}][KeyReleased: Miss Action on {curNote.GetHashCode()}!!!!");
@@ -147,27 +147,7 @@ namespace Group12
             DOTween.Kill(_notes[_currentNoteIdx].GetHashCode());
 
             var grade =  GetTimingGrade(actionInGameTime, curNote.pressMoment);
-            FxManager.Instance.PlayActionFx(LaneIdx,grade);
-            // if (excellentFloor < actionInGameTime && actionInGameTime < excellentCeil)
-            // {
-            //     Debug.Log(
-            //         $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}] Excellent Press  on {curNote.GetHashCode()}!!!!");
-            // }
-            // else if (goodFloor < actionInGameTime && actionInGameTime < goodCeil)
-            // {
-            //     Debug.Log(
-            //         $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}] Good Press on {curNote.GetHashCode()}!!!!");
-            // }
-            // else if (fairFloor < actionInGameTime && actionInGameTime < fairCeil)
-            // {
-            //     Debug.Log(
-            //         $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}] Fair Press on {curNote.GetHashCode()}!!!!");
-            // }
-            // else if (actionInGameTime < missingCeiling)
-            // {
-            //     Debug.Log(
-            //         $"[{nameof(HandlePress)}][KeyPressed: {context.action.name}]  Miss Press on {curNote.GetHashCode()}!!!!");
-            // }
+            FxManager.Instance.PlayActionFx(LaneIdx, grade);
 
             Debug.Log(
                 $"[{nameof(HandlePress)}][KeyPressed: {{context.action.name}}] Press {curNote.GetHashCode()}, Try to go to Next Note ...!!!!");

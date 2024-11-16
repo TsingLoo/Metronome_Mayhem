@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "showPanel",
+                    "type": "Button",
+                    "id": "b6a80c3b-ba9d-4f07-adf3-a286ac7a727c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -164,6 +173,17 @@
                     "processors": "",
                     "groups": "PC-Keyboard",
                     "action": "inputChannel6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "673850ab-09e8-4ce2-87a9-c0e0ce2b7585",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC-Keyboard",
+                    "action": "showPanel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

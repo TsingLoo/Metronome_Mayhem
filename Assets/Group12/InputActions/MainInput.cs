@@ -98,6 +98,15 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""showPanel"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6a80c3b-ba9d-4f07-adf3-a286ac7a727c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -188,6 +197,17 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
                     ""action"": ""inputChannel6"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""673850ab-09e8-4ce2-87a9-c0e0ce2b7585"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC-Keyboard"",
+                    ""action"": ""showPanel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -210,6 +230,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
         m_inLevel_inputChannel5 = m_inLevel.FindAction("inputChannel5", throwIfNotFound: true);
         m_inLevel_inputChannel6 = m_inLevel.FindAction("inputChannel6", throwIfNotFound: true);
         m_inLevel_inputChannel7 = m_inLevel.FindAction("inputChannel7", throwIfNotFound: true);
+        m_inLevel_showPanel = m_inLevel.FindAction("showPanel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -279,6 +300,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_inLevel_inputChannel5;
     private readonly InputAction m_inLevel_inputChannel6;
     private readonly InputAction m_inLevel_inputChannel7;
+    private readonly InputAction m_inLevel_showPanel;
     public struct InLevelActions
     {
         private @MainInput m_Wrapper;
@@ -291,6 +313,7 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
         public InputAction @inputChannel5 => m_Wrapper.m_inLevel_inputChannel5;
         public InputAction @inputChannel6 => m_Wrapper.m_inLevel_inputChannel6;
         public InputAction @inputChannel7 => m_Wrapper.m_inLevel_inputChannel7;
+        public InputAction @showPanel => m_Wrapper.m_inLevel_showPanel;
         public InputActionMap Get() { return m_Wrapper.m_inLevel; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -324,6 +347,9 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
             @inputChannel7.started += instance.OnInputChannel7;
             @inputChannel7.performed += instance.OnInputChannel7;
             @inputChannel7.canceled += instance.OnInputChannel7;
+            @showPanel.started += instance.OnShowPanel;
+            @showPanel.performed += instance.OnShowPanel;
+            @showPanel.canceled += instance.OnShowPanel;
         }
 
         private void UnregisterCallbacks(IInLevelActions instance)
@@ -352,6 +378,9 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
             @inputChannel7.started -= instance.OnInputChannel7;
             @inputChannel7.performed -= instance.OnInputChannel7;
             @inputChannel7.canceled -= instance.OnInputChannel7;
+            @showPanel.started -= instance.OnShowPanel;
+            @showPanel.performed -= instance.OnShowPanel;
+            @showPanel.canceled -= instance.OnShowPanel;
         }
 
         public void RemoveCallbacks(IInLevelActions instance)
@@ -388,5 +417,6 @@ public partial class @MainInput: IInputActionCollection2, IDisposable
         void OnInputChannel5(InputAction.CallbackContext context);
         void OnInputChannel6(InputAction.CallbackContext context);
         void OnInputChannel7(InputAction.CallbackContext context);
+        void OnShowPanel(InputAction.CallbackContext context);
     }
 }
