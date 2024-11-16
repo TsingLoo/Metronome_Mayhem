@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5891686703846394824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -100,12 +100,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 90
+      value: 50.157093
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 104.02
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8e-14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
@@ -165,12 +165,17 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a9abd999834cab4f803eac917512294,
         type: 3}
       propertyPath: m_Name
       value: Note Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a9abd999834cab4f803eac917512294,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
